@@ -38,15 +38,10 @@
   margin:0 0 44px;
   font-weight:600;
   line-height:1.35;
-  letter-spacing:0.06em;
+  letter-spacing:0.05em;
   text-transform:uppercase;
   font-size:clamp(34px, 5vw, 56px);
-}
-    .sub{
-      font-size:clamp(16px, 2vw, 18px);
-      opacity:.9;
-      margin:0 0 36px;
-    }
+}    
     a.btn{
       display:inline-block;
       padding:14px 22px;
@@ -80,15 +75,14 @@
    href="https://angryabe.printful.me/product/the-constitution"
    target="_blank"
    rel="noopener"
-   onclick="gtag('event', 'click', {
+onclick="window.gtag && gtag('event','click',{event_category:'Outbound',event_label:'Printful Product Page'});"
      event_category: 'Outbound',
      event_label: 'Printful Product Page'
    });">
-   View the Shirt
+   Have a Look
 </a>
 
     <div class="fine">© Angry Abe</div>
   </main>
 </body>
 </html>
-<!-- deploy -->
