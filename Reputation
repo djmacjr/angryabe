@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X154CZFXZ1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X154CZFXZ1');
+</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Angry Abe</title>
+  <meta name="description" content="The Constitution Was Not a Suggestion." />
+  <style>
+    :root { color-scheme: dark; }
+    body{
+      margin:0; min-height:100vh;
+      display:flex; align-items:center; justify-content:center;
+      background:#000; color:#f2efe6;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .wrap{
+      width:min(880px, 92vw);
+      text-align:center;
+      padding:48px 0;
+    }
+    .mark{
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      font-size:12px;
+      opacity:.85;
+      margin-bottom:28px;
+    }
+    h1{
+  margin:0 0 44px;
+  font-weight:600;
+  line-height:1.35;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  font-size:clamp(34px, 5vw, 56px);
+}    
+    a.btn{
+      display:inline-block;
+      padding:14px 22px;
+      border:1px solid rgba(242,239,230,.6);
+      border-radius:10px;
+      color:#f2efe6;
+      text-decoration:none;
+      font-size:16px;
+      letter-spacing:.02em;
+}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="mark">Angry Abe</div>
+    <h1>Reputation<br>is Not<br>Character</h1>
+    
+    <a class="btn" 
+       href="https://angryabe.printful.me/product/the-constitution?utm_source=angryabe&utm_medium=site&utm_campaign=launch" 
+       target="_blank" 
+       rel="noopener" 
+       onclick="gtag('event', 'view_shirt_click', {'event_category': 'engagement', 'event_label': 'The Constitution Shirt'});">
+       Have a Look
+    </a>
+
+    <div class="fine" style="margin-top: 48px; opacity: 0.5; font-size: 12px;">
+      © Angry Abe
+    </div>
+  </main>
+</body>
+</html>
