@@ -3,194 +3,184 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Reputation Is Not Character | Angry Abe</title>
-  <meta name="description" content="A reminder tee for people who care more about substance than applause." />
+  <title>AngryAbe — Character</title>
+  <meta name="description" content="A clear, readable page about character, standards, and integrity." />
   <style>
     :root{
-      --bg:#0b0f14; --panel:#0f1621; --text:#e9eef6; --muted:#a9b4c4;
-      --line:rgba(255,255,255,.12); --accent:#e6c86e; --accent2:#78a6ff;
+      --bg:#0b0f17;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#60a5fa;
+      --accent2:#f59e0b;
+      --ring: rgba(96,165,250,.35);
       --shadow: 0 18px 50px rgba(0,0,0,.45);
-      --radius:18px;
-      --max: 1040px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --radius: 18px;
     }
     *{box-sizing:border-box}
     body{
-      margin:0; background:radial-gradient(1200px 800px at 10% 0%, rgba(120,166,255,.18), transparent 60%),
-      radial-gradient(900px 600px at 90% 10%, rgba(230,200,110,.14), transparent 55%),
-      var(--bg);
-      color:var(--text); font-family:var(--font); line-height:1.45;
-    }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 54px}
-    header{
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
-      padding:14px 16px; border:1px solid var(--line); border-radius:var(--radius);
-      background:rgba(15,22,33,.65); backdrop-filter: blur(10px); box-shadow: var(--shadow);
-      position:sticky; top:14px; z-index:10;
-    }
-    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.4px}
-    .mark{
-      width:34px; height:34px; border-radius:10px;
-      background:linear-gradient(135deg, rgba(230,200,110,.95), rgba(120,166,255,.95));
-      box-shadow: 0 12px 30px rgba(0,0,0,.35);
-    }
-    nav{display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end}
-    .pill{
-      padding:8px 12px; border-radius:999px; border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:var(--muted);
-      font-size:14px;
-    }
-    .pill:hover{border-color:rgba(255,255,255,.22); color:var(--text)}
-    .pill.active{border-color:rgba(230,200,110,.6); color:var(--text); background:rgba(230,200,110,.10)}
-    main{padding-top:26px}
-    .hero{
-      display:grid; grid-template-columns: 1.2fr .8fr; gap:18px;
-      align-items:stretch;
-    }
-    @media (max-width: 900px){ .hero{grid-template-columns:1fr} header{position:static} }
-    .card{
-      border:1px solid var(--line); border-radius:var(--radius);
-      background:rgba(15,22,33,.55);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .pad{padding:22px}
-    .kicker{color:var(--accent); font-weight:700; letter-spacing:.12em; text-transform:uppercase; font-size:12px}
-    h1{margin:10px 0 10px; font-size:44px; line-height:1.05}
-    @media (max-width: 520px){ h1{font-size:36px} }
-    .lead{color:var(--muted); font-size:16px; margin:0 0 18px}
-    .ctaRow{display:flex; flex-wrap:wrap; gap:12px; margin-top:16px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 14px; border-radius:12px; border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      font-weight:700;
-    }
-    .btn.primary{
-      border-color: rgba(230,200,110,.55);
-      background: linear-gradient(180deg, rgba(230,200,110,.22), rgba(255,255,255,.02));
-    }
-    .btn:hover{border-color:rgba(255,255,255,.24)}
-    .mini{display:grid; gap:12px}
-    .stat{
-      padding:16px; border:1px solid var(--line); border-radius:16px;
-      background:rgba(255,255,255,.03);
-    }
-    .stat b{display:block; margin-bottom:6px}
-    blockquote{
-      margin:0; padding:18px;
-      border-left:4px solid rgba(120,166,255,.7);
-      background:rgba(120,166,255,.10);
-      border-radius:14px;
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(96,165,250,.20), transparent 60%),
+        radial-gradient(900px 600px at 90% 20%, rgba(245,158,11,.12), transparent 60%),
+        var(--bg);
       color:var(--text);
+      line-height:1.55;
     }
-    .quoteBy{color:var(--muted); font-size:13px; margin-top:10px}
-    .section{margin-top:18px}
-    .grid3{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px}
-    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
-    .linkCard{
-      padding:16px; border:1px solid var(--line); border-radius:16px;
-      background:rgba(255,255,255,.03);
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1050px;margin:0 auto;padding:28px 18px 60px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:14px 16px;
+      background: rgba(17,24,39,.65);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      position:sticky;top:12px;z-index:10;
     }
-    .linkCard:hover{border-color:rgba(255,255,255,.22)}
-    .linkCard .t{font-weight:800}
-    .linkCard .d{color:var(--muted); font-size:14px; margin-top:6px}
-    footer{margin-top:26px; color:var(--muted); font-size:13px; text-align:center}
-    .hr{height:1px; background:var(--line); margin:18px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .mark{
+      width:44px;height:44px;border-radius:14px;
+      display:grid;place-items:center;
+      background: linear-gradient(135deg, rgba(96,165,250,.24), rgba(245,158,11,.14));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      font-weight:800;letter-spacing:.5px;
+    }
+    .brand h1{font-size:16px;margin:0}
+    .brand p{margin:0;color:var(--muted);font-size:12px}
+    .nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 16px;min-height:52px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(15,23,42,.75);
+      color:var(--text);
+      font-weight:700;
+      transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease, background .12s ease;
+      box-shadow: 0 10px 26px rgba(0,0,0,.35);
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px);border-color:rgba(96,165,250,.40);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+    .btn:focus{outline:none;box-shadow:0 0 0 4px var(--ring), 0 14px 34px rgba(0,0,0,.45)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(96,165,250,.88), rgba(96,165,250,.45));
+      color:#071425;border-color:rgba(96,165,250,.60);
+    }
+    .btn.ghost{background: rgba(17,24,39,.35);border-color:rgba(255,255,255,.10)}
+    .page{
+      margin-top:22px;
+      padding:24px 18px;
+      background: rgba(17,24,39,.55);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+    .title-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
+    h2{margin:0;font-size:32px;line-height:1.15;letter-spacing:-.6px}
+    .subtitle{margin:6px 0 0;color:var(--muted);max-width:72ch}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:16px;
+      margin-top:18px;
+      align-items:start;
+    }
+    @media (max-width: 900px){.grid{grid-template-columns:1fr} header{position:relative;top:auto}}
+    .card{
+      background: rgba(15,23,42,.55);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: calc(var(--radius) + 6px);
+      padding:18px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+    }
+    .card h3{margin:0 0 10px;font-size:16px}
+    .card p{margin:0 0 10px;color:var(--muted);font-size:14px}
+    ul{margin:10px 0 0;padding-left:18px}
+    li{margin:8px 0;color:rgba(229,231,235,.92)}
+    .callout{
+      border-left:4px solid rgba(96,165,250,.85);
+      padding:12px 14px;
+      background: rgba(96,165,250,.10);
+      border-radius: 14px;
+      margin-top:14px;
+      color: rgba(229,231,235,.92);
+    }
+    footer{margin-top:18px;color:rgba(229,231,235,.72);font-size:12px;text-align:center}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <a class="brand" href="index.html" aria-label="Angry Abe Home">
-        <span class="mark" aria-hidden="true"></span>
-        <span>ANGRY ABE</span>
-      </a>
-      <nav>
-        <a class="pill" href="index.html">Home</a>
-        <a class="pill" href="constitution.html">Constitution</a>
-        <a class="pill active" href="character.html">Character</a>
-        <a class="pill" href="action.html">Action</a>
+      <div class="brand">
+        <div class="mark">AA</div>
+        <div>
+          <h1>AngryAbe</h1>
+          <p>Character</p>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a class="btn ghost" href="index.html">Home</a>
+        <a class="btn" href="constitution.html">Constitution</a>
+        <a class="btn primary" href="character.html">Character</a>
+        <a class="btn" href="action.html">Action</a>
       </nav>
     </header>
 
-    <main>
-      <section class="hero">
-        <div class="card">
-          <div class="pad">
-            <div class="kicker">Featured Shirt</div>
-            <h1>Reputation<br/>Is Not Character.</h1>
-            <p class="lead">
-              A quiet truth in a noisy world. When the applause fades and the optics change,
-              character is what’s left standing.
-            </p>
-
-            <div class="ctaRow">
-              <a class="btn primary" href="https://www.etsy.com/listing/4460040832/reputation-is-not-character-shirt" target="_blank" rel="noopener">
-                View on Etsy
-              </a>
-              <a class="btn" href="constitution.html">Previous: Constitution</a>
-              <a class="btn" href="index.html">Back to Home</a>
-            </div>
-
-            <div class="hr"></div>
-
-            <blockquote>
-              “Nearly all men can stand adversity, but if you want to test a man’s character, give him power.”
-              <div class="quoteBy">— Abraham Lincoln</div>
-            </blockquote>
-          </div>
+    <main class="page">
+      <div class="title-row">
+        <div>
+          <h2>Reputation is not character.</h2>
+          <p class="subtitle">
+            Branding is easy. Integrity is hard. Character is what remains when the applause fades and the pressure shows up.
+          </p>
         </div>
+        <a class="btn primary" href="action.html">Take Action</a>
+      </div>
 
-        <aside class="card">
-          <div class="pad mini">
-            <div class="stat">
-              <b>Conversation starter</b>
-              <span class="d">The kind that makes people think before they speak.</span>
-            </div>
-            <div class="stat">
-              <b>Wear it anywhere</b>
-              <span class="d">From the range to the grocery store — it still hits.</span>
-            </div>
-            <div class="stat">
-              <b>Message</b>
-              <span class="d">Choose principle over performance.</span>
-            </div>
+      <div class="grid">
+        <section class="card" aria-label="Core standards">
+          <h3>Core standards</h3>
+          <ul>
+            <li><strong>Honesty:</strong> say what’s true, even when it costs.</li>
+            <li><strong>Courage:</strong> do what’s right, not what’s trending.</li>
+            <li><strong>Accountability:</strong> own the result — no excuses, no blame games.</li>
+            <li><strong>Consistency:</strong> values don’t change depending on the audience.</li>
+            <li><strong>Service:</strong> power is a responsibility, not a prize.</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Bottom line:</strong> Character is the gap between what you say and what you do.
+            Close the gap — every time.
           </div>
+        </section>
+
+        <aside class="card" aria-label="Short message block">
+          <h3>A short message you can reuse</h3>
+          <p>
+            “I’m not interested in image. I’m interested in integrity. When the moment demands it,
+            show your character — not your PR.”
+          </p>
+          <p style="margin-top:12px">
+            Edit this paragraph into your voice. Keep it short enough that people actually read it.
+          </p>
+
+          <a class="btn" href="constitution.html" style="margin-top:10px">Back: Constitution</a>
+          <a class="btn" href="action.html" style="margin-top:10px">Next: Action</a>
         </aside>
-      </section>
-
-      <section class="section card">
-        <div class="pad">
-          <div class="kicker">Explore the Set</div>
-          <h2 style="margin:10px 0 12px; font-size:26px;">More messages, same spine.</h2>
-          <div class="grid3">
-            <a class="linkCard" href="constitution.html">
-              <div class="t">The Constitution Was Not a Suggestion</div>
-              <div class="d">For the people who still treat the document like the document.</div>
-            </a>
-            <a class="linkCard" href="action.html">
-              <div class="t">Action Over Talk</div>
-              <div class="d">Because saying the right thing isn’t the same as doing it.</div>
-            </a>
-            <a class="linkCard" href="index.html">
-              <div class="t">Home</div>
-              <div class="d">All designs in one place, clean and simple.</div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        © <span id="y"></span> Angry Abe • Built for people who still mean what they say.
-      </footer>
+      </div>
     </main>
+
+    <footer>
+      © <span id="year"></span> AngryAbe • Character
+    </footer>
   </div>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
