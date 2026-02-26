@@ -3,126 +3,257 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Angry Abe | Shirts With a Spine</title>
-  <meta name="description" content="A small collection of bold, minimalist shirts inspired by American principles and straight talk." />
+  <title>AngryAbe — Choose Your Page</title>
+  <meta name="description" content="AngryAbe landing page with large, readable navigation." />
   <style>
     :root{
-      --bg:#0b0f14; --panel:#0f1621; --text:#e9eef6; --muted:#a9b4c4;
-      --line:rgba(255,255,255,.12); --accent:#e6c86e; --accent2:#78a6ff;
+      --bg:#0b0f17;
+      --panel:#111827;
+      --panel2:#0f172a;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#f59e0b;
+      --accent2:#60a5fa;
+      --ok:#34d399;
+      --danger:#fb7185;
+      --ring: rgba(245,158,11,.35);
       --shadow: 0 18px 50px rgba(0,0,0,.45);
-      --radius:18px; --max: 1040px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --radius: 18px;
     }
     *{box-sizing:border-box}
     body{
-      margin:0; background:radial-gradient(1200px 800px at 10% 0%, rgba(120,166,255,.18), transparent 60%),
-      radial-gradient(900px 600px at 90% 10%, rgba(230,200,110,.14), transparent 55%),
-      var(--bg);
-      color:var(--text); font-family:var(--font); line-height:1.45;
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(96,165,250,.18), transparent 60%),
+        radial-gradient(900px 600px at 90% 20%, rgba(245,158,11,.18), transparent 60%),
+        radial-gradient(800px 500px at 50% 100%, rgba(52,211,153,.12), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
     }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 54px}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1050px;margin:0 auto;padding:28px 18px 60px}
     header{
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
-      padding:14px 16px; border:1px solid var(--line); border-radius:var(--radius);
-      background:rgba(15,22,33,.65); backdrop-filter: blur(10px); box-shadow: var(--shadow);
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:14px 16px;
+      background: rgba(17,24,39,.65);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      position:sticky;top:12px;z-index:10;
     }
-    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.4px}
+    .brand{display:flex;align-items:center;gap:12px}
     .mark{
-      width:34px; height:34px; border-radius:10px;
-      background:linear-gradient(135deg, rgba(230,200,110,.95), rgba(120,166,255,.95));
-      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+      width:44px;height:44px;border-radius:14px;
+      display:grid;place-items:center;
+      background: linear-gradient(135deg, rgba(245,158,11,.22), rgba(96,165,250,.18));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      font-weight:800;
+      letter-spacing:.5px;
     }
-    nav{display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end}
-    .pill{
-      padding:8px 12px; border-radius:999px; border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:var(--muted);
-      font-size:14px;
+    .brand h1{font-size:16px;margin:0}
+    .brand p{margin:0;color:var(--muted);font-size:12px}
+    .nav{
+      display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end
     }
-    .pill:hover{border-color:rgba(255,255,255,.22); color:var(--text)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 16px;
+      min-height:52px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(15,23,42,.75);
+      color: var(--text);
+      font-weight:700;
+      letter-spacing:.2px;
+      transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease, background .12s ease;
+      box-shadow: 0 10px 26px rgba(0,0,0,.35);
+      user-select:none;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px);border-color:rgba(245,158,11,.35);box-shadow: 0 14px 34px rgba(0,0,0,.45)}
+    .btn:focus{outline:none;box-shadow: 0 0 0 4px var(--ring), 0 14px 34px rgba(0,0,0,.45)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(245,158,11,.92), rgba(245,158,11,.55));
+      color:#111827;border-color:rgba(245,158,11,.60);
+    }
+    .btn.primary:hover{border-color:rgba(245,158,11,.9)}
+    .btn.secondary{
+      background: linear-gradient(135deg, rgba(96,165,250,.85), rgba(96,165,250,.45));
+      color:#0b1220;border-color:rgba(96,165,250,.60);
+    }
+    .btn.ghost{
+      background: rgba(17,24,39,.35);
+      border-color:rgba(255,255,255,.10);
+    }
     .hero{
+      margin-top:22px;
+      padding:28px 18px;
+      background: rgba(17,24,39,.55);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){
+      .hero-grid{grid-template-columns:1fr}
+      header{position:relative;top:auto}
+    }
+    .kicker{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(15,23,42,.55);
+      color: var(--muted);
+      font-size:12px;
+    }
+    .hero h2{
+      margin:14px 0 10px;
+      font-size:34px;
+      line-height:1.12;
+      letter-spacing:-.6px;
+    }
+    .hero p{
+      margin:0 0 16px;
+      color: var(--muted);
+      font-size:16px;
+      max-width: 62ch;
+    }
+    .cta-row{
+      display:flex;flex-wrap:wrap;gap:12px;
       margin-top:18px;
-      border:1px solid var(--line); border-radius:var(--radius);
-      background:rgba(15,22,33,.55); box-shadow: var(--shadow);
-      padding:22px;
     }
-    .kicker{color:var(--accent); font-weight:700; letter-spacing:.12em; text-transform:uppercase; font-size:12px}
-    h1{margin:10px 0 10px; font-size:44px; line-height:1.05}
-    @media (max-width: 520px){ h1{font-size:36px} }
-    .lead{color:var(--muted); font-size:16px; margin:0}
-    .grid{
-      margin-top:14px;
-      display:grid; grid-template-columns:repeat(3, 1fr); gap:14px;
-    }
-    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
     .card{
-      padding:18px; border:1px solid var(--line); border-radius:16px;
-      background:rgba(255,255,255,.03);
-      box-shadow: 0 10px 30px rgba(0,0,0,.30);
+      background: rgba(15,23,42,.55);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: calc(var(--radius) + 6px);
+      padding:18px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      display:flex;flex-direction:column;gap:10px;
     }
-    .card:hover{border-color:rgba(255,255,255,.22)}
-    .card .t{font-weight:900; font-size:18px}
-    .card .d{color:var(--muted); font-size:14px; margin-top:8px}
-    .card .go{
-      margin-top:14px; display:inline-flex; gap:10px; align-items:center;
-      padding:10px 12px; border-radius:12px; border:1px solid var(--line);
-      background:rgba(255,255,255,.04); font-weight:700;
+    .card h3{margin:0;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .list{
+      margin-top:12px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
     }
-    .card .go:hover{border-color:rgba(255,255,255,.24)}
-    footer{margin-top:22px; color:var(--muted); font-size:13px; text-align:center}
+    @media (max-width: 860px){
+      .list{grid-template-columns:1fr}
+    }
+    .tile{
+      background: rgba(17,24,39,.45);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: calc(var(--radius) + 6px);
+      padding:16px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.35);
+    }
+    .tile h4{margin:0 0 6px;font-size:15px}
+    .tile p{margin:0 0 12px;color:var(--muted);font-size:13px}
+    footer{
+      margin-top:20px;
+      color: rgba(229,231,235,.72);
+      font-size:12px;
+      text-align:center;
+    }
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .pill{
+      padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(15,23,42,.45);
+      color: var(--muted);
+      font-size:12px;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <a class="brand" href="index.html" aria-label="Angry Abe Home">
-        <span class="mark" aria-hidden="true"></span>
-        <span>ANGRY ABE</span>
-      </a>
-      <nav>
-        <a class="pill" href="constitution.html">Constitution</a>
-        <a class="pill" href="character.html">Character</a>
-        <a class="pill" href="action.html">Action</a>
+      <div class="brand">
+        <div class="mark">AA</div>
+        <div>
+          <h1>AngryAbe</h1>
+          <p>Simple pages • big buttons • easy reading</p>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a class="btn ghost" href="index.html">Home</a>
+        <a class="btn" href="constitution.html">Constitution</a>
+        <a class="btn" href="character.html">Character</a>
+        <a class="btn" href="action.html">Action</a>
       </nav>
     </header>
 
-    <section class="hero">
-      <div class="kicker">Shirts With a Spine</div>
-      <h1>Say it plain.<br/>Wear it proud.</h1>
-      <p class="lead">
-        Three clean designs built around the stuff that lasts: principles, character, and action.
-        Pick a message — then click through to the full page.
-      </p>
+    <section class="hero" aria-label="Hero">
+      <div class="hero-grid">
+        <div>
+          <span class="kicker">Built for fast scanning • mobile friendly • no fluff</span>
+          <h2>Pick a page and make a statement.</h2>
+          <p>
+            This site is structured as four simple pages: a landing hub and three focused sections.
+            Each page keeps the same layout and navigation so visitors never feel lost.
+          </p>
 
-      <div class="grid">
-        <a class="card" href="constitution.html">
-          <div class="t">The Constitution Was Not a Suggestion</div>
-          <div class="d">Foundational framework. No asterisks.</div>
-          <span class="go">View page →</span>
-        </a>
+          <div class="cta-row">
+            <a class="btn primary" href="constitution.html">Go to Constitution</a>
+            <a class="btn secondary" href="character.html">Go to Character</a>
+            <a class="btn" href="action.html">Go to Action</a>
+          </div>
 
-        <a class="card" href="character.html">
-          <div class="t">Reputation Is Not Character</div>
-          <div class="d">Substance over applause. Always.</div>
-          <span class="go">View page →</span>
-        </a>
+          <div class="pill-row" aria-label="Highlights">
+            <span class="pill">Large tap targets</span>
+            <span class="pill">Consistent header + footer</span>
+            <span class="pill">Clean sections</span>
+            <span class="pill">Easy to edit</span>
+          </div>
+        </div>
 
-        <a class="card" href="action.html">
-          <div class="t">Action Over Talk</div>
-          <div class="d">Do the work. Let it speak.</div>
-          <span class="go">View page →</span>
-        </a>
+        <aside class="card" aria-label="Quick note">
+          <h3>Quick edit tips</h3>
+          <p>Open any file and change the text inside the sections. The design stays consistent automatically.</p>
+          <p><strong>Want a stronger tone?</strong> Replace the “Key points” bullets on each page with your exact messaging.</p>
+          <a class="btn" href="action.html" style="margin-top:auto">Open Action Page</a>
+        </aside>
+      </div>
+
+      <div class="list" aria-label="Page tiles">
+        <div class="tile">
+          <h4>Constitution</h4>
+          <p>Foundational principles, plain language, clear bullets.</p>
+          <a class="btn" href="constitution.html">Open Constitution</a>
+        </div>
+        <div class="tile">
+          <h4>Character</h4>
+          <p>Values, integrity, and the standards that matter.</p>
+          <a class="btn" href="character.html">Open Character</a>
+        </div>
+        <div class="tile">
+          <h4>Action</h4>
+          <p>What to do next: share, talk, organize, and build.</p>
+          <a class="btn" href="action.html">Open Action</a>
+        </div>
       </div>
     </section>
 
     <footer>
-      © <span id="y"></span> Angry Abe • Built for people who still mean what they say.
+      © <span id="year"></span> AngryAbe • Built for readability
     </footer>
   </div>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
