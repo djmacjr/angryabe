@@ -1,101 +1,202 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Take Action | Angry Abe</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Action Over Talk | Angry Abe</title>
+  <meta name="description" content="A shirt for people who know the difference between saying and doing." />
   <style>
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background-color: #111;
-      color: #f5f5f5;
-      text-align: center;
+    :root{
+      --bg:#0b0f14; --panel:#0f1621; --text:#e9eef6; --muted:#a9b4c4;
+      --line:rgba(255,255,255,.12); --accent:#e6c86e; --accent2:#78a6ff;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius:18px;
+      --max: 1040px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
-
-    header {
-      padding: 60px 20px 40px 20px;
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:radial-gradient(1200px 800px at 10% 0%, rgba(120,166,255,.18), transparent 60%),
+      radial-gradient(900px 600px at 90% 10%, rgba(230,200,110,.14), transparent 55%),
+      var(--bg);
+      color:var(--text); font-family:var(--font); line-height:1.45;
     }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 54px}
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:14px 16px; border:1px solid var(--line); border-radius:var(--radius);
+      background:rgba(15,22,33,.65); backdrop-filter: blur(10px); box-shadow: var(--shadow);
+      position:sticky; top:14px; z-index:10;
     }
-
-    .subhead {
-      font-size: 1.3rem;
-      max-width: 700px;
-      margin: 0 auto 40px auto;
-      line-height: 1.6;
-      color: #ccc;
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.4px}
+    .mark{
+      width:34px; height:34px; border-radius:10px;
+      background:linear-gradient(135deg, rgba(230,200,110,.95), rgba(120,166,255,.95));
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
     }
-
-    .cta-container {
-      margin: 40px 0;
+    nav{display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end}
+    .pill{
+      padding:8px 12px; border-radius:999px; border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-size:14px;
     }
-
-    .cta-button {
-      display: inline-block;
-      margin: 15px;
-      padding: 16px 32px;
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: #111;
-      background-color: #f5f5f5;
-      border: 2px solid #f5f5f5;
-      transition: all 0.3s ease;
+    .pill:hover{border-color:rgba(255,255,255,.22); color:var(--text)}
+    .pill.active{border-color:rgba(230,200,110,.6); color:var(--text); background:rgba(230,200,110,.10)}
+    main{padding-top:26px}
+    .hero{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:18px;
+      align-items:stretch;
     }
-
-    .cta-button:hover {
-      background-color: transparent;
-      color: #f5f5f5;
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr} header{position:static} }
+    .card{
+      border:1px solid var(--line); border-radius:var(--radius);
+      background:rgba(15,22,33,.55);
+      box-shadow: var(--shadow);
+      overflow:hidden;
     }
-
-    footer {
-      margin-top: 80px;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #777;
+    .pad{padding:22px}
+    .kicker{color:var(--accent); font-weight:700; letter-spacing:.12em; text-transform:uppercase; font-size:12px}
+    h1{margin:10px 0 10px; font-size:44px; line-height:1.05}
+    @media (max-width: 520px){ h1{font-size:36px} }
+    .lead{color:var(--muted); font-size:16px; margin:0 0 18px}
+    .ctaRow{display:flex; flex-wrap:wrap; gap:12px; margin-top:16px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px; border-radius:12px; border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      font-weight:700;
     }
-
-    .nav-link {
-      display: inline-block;
-      margin-top: 30px;
-      color: #aaa;
-      text-decoration: none;
-      font-size: 0.9rem;
+    .btn.primary{
+      border-color: rgba(230,200,110,.55);
+      background: linear-gradient(180deg, rgba(230,200,110,.22), rgba(255,255,255,.02));
     }
-
-    .nav-link:hover {
-      color: #fff;
+    .btn:hover{border-color:rgba(255,255,255,.24)}
+    .mini{display:grid; gap:12px}
+    .stat{
+      padding:16px; border:1px solid var(--line); border-radius:16px;
+      background:rgba(255,255,255,.03);
     }
+    .stat b{display:block; margin-bottom:6px}
+    blockquote{
+      margin:0; padding:18px;
+      border-left:4px solid rgba(230,200,110,.7);
+      background:rgba(230,200,110,.08);
+      border-radius:14px;
+      color:var(--text);
+    }
+    .quoteBy{color:var(--muted); font-size:13px; margin-top:10px}
+    .section{margin-top:18px}
+    .grid3{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px}
+    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
+    .linkCard{
+      padding:16px; border:1px solid var(--line); border-radius:16px;
+      background:rgba(255,255,255,.03);
+    }
+    .linkCard:hover{border-color:rgba(255,255,255,.22)}
+    .linkCard .t{font-weight:800}
+    .linkCard .d{color:var(--muted); font-size:14px; margin-top:6px}
+    footer{margin-top:26px; color:var(--muted); font-size:13px; text-align:center}
+    .hr{height:1px; background:var(--line); margin:18px 0}
   </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="index.html" aria-label="Angry Abe Home">
+        <span class="mark" aria-hidden="true"></span>
+        <span>ANGRY ABE</span>
+      </a>
+      <nav>
+        <a class="pill" href="index.html">Home</a>
+        <a class="pill" href="constitution.html">Constitution</a>
+        <a class="pill" href="character.html">Character</a>
+        <a class="pill active" href="action.html">Action</a>
+      </nav>
+    </header>
 
-  <header>
-    <h1>Take Action</h1>
+    <main>
+      <section class="hero">
+        <div class="card">
+          <div class="pad">
+            <div class="kicker">Featured Shirt</div>
+            <h1>Action<br/>Over Talk.</h1>
+            <p class="lead">
+              Talk is cheap. Action is accountable. This one’s for builders, doers, volunteers,
+              and anyone tired of “someday.”
+            </p>
 
-    <p class="subhead">
-      Principles aren’t passive.  
-      If the Constitution is not a suggestion, then neither is your voice.
-      Stand up. Speak clearly. Wear it boldly.
-    </p>
+            <div class="ctaRow">
+              <!-- Replace # with the Etsy listing when it's ready -->
+              <a class="btn primary" href="#" target="_blank" rel="noopener">
+                View on Etsy
+              </a>
+              <a class="btn" href="character.html">Previous: Character</a>
+              <a class="btn" href="index.html">Back to Home</a>
+            </div>
 
-    <div class="cta-container">
-      <a href="constitution.html" class="cta-button">Shop The Constitution Shirt</a>
-      <a href="character.html" class="cta-button">View Reputation Is Not Character</a>
-    </div>
+            <div class="hr"></div>
 
-    <a href="index.html" class="nav-link">← Back to Home</a>
-  </header>
+            <blockquote>
+              “The best way to predict your future is to create it.”
+              <div class="quoteBy">— Abraham Lincoln (commonly attributed)</div>
+            </blockquote>
 
-  <footer>
-    © Angry Abe
-  </footer>
+            <p class="lead" style="margin-top:14px">
+              If you’d rather use a fully verified Lincoln line here, swap the quote for:
+              <em>“Be sure you put your feet in the right place, then stand firm.”</em>
+            </p>
+          </div>
+        </div>
 
+        <aside class="card">
+          <div class="pad mini">
+            <div class="stat">
+              <b>Built for momentum</b>
+              <span class="d">Simple message, easy read, instant signal.</span>
+            </div>
+            <div class="stat">
+              <b>Perfect for</b>
+              <span class="d">Events, volunteering, small business runs, or just setting the tone.</span>
+            </div>
+            <div class="stat">
+              <b>Reminder</b>
+              <span class="d">Do the work. Then let the work speak.</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section card">
+        <div class="pad">
+          <div class="kicker">Explore the Set</div>
+          <h2 style="margin:10px 0 12px; font-size:26px;">More messages, same spine.</h2>
+          <div class="grid3">
+            <a class="linkCard" href="constitution.html">
+              <div class="t">The Constitution Was Not a Suggestion</div>
+              <div class="d">Foundational principles, plainly stated.</div>
+            </a>
+            <a class="linkCard" href="character.html">
+              <div class="t">Reputation Is Not Character</div>
+              <div class="d">Substance over applause.</div>
+            </a>
+            <a class="linkCard" href="index.html">
+              <div class="t">Home</div>
+              <div class="d">All designs in one place, clean and simple.</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        © <span id="y"></span> Angry Abe • Built for the doers.
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
