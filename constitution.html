@@ -1,81 +1,199 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X154CZFXZ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-X154CZFXZ1');
-</script>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Angry Abe</title>
-  <meta name="description" content="The Constitution Was Not a Suggestion." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Constitution Was Not a Suggestion | Angry Abe</title>
+  <meta name="description" content="A bold, minimalist tee for people who believe the Constitution was written with intention — and meant to be upheld." />
   <style>
-    :root { color-scheme: dark; }
+    :root{
+      --bg:#0b0f14; --panel:#0f1621; --text:#e9eef6; --muted:#a9b4c4;
+      --line:rgba(255,255,255,.12); --accent:#e6c86e; --accent2:#78a6ff;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius:18px;
+      --max: 1040px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
     body{
-      margin:0; min-height:100vh;
-      display:flex; align-items:center; justify-content:center;
-      background:#000; color:#f2efe6;
-      font-family: Georgia, "Times New Roman", serif;
+      margin:0; background:radial-gradient(1200px 800px at 10% 0%, rgba(120,166,255,.18), transparent 60%),
+      radial-gradient(900px 600px at 90% 10%, rgba(230,200,110,.14), transparent 55%),
+      var(--bg);
+      color:var(--text); font-family:var(--font); line-height:1.45;
     }
-    .wrap{
-      width:min(880px, 92vw);
-      text-align:center;
-      padding:48px 0;
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 54px}
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:14px 16px; border:1px solid var(--line); border-radius:var(--radius);
+      background:rgba(15,22,33,.65); backdrop-filter: blur(10px); box-shadow: var(--shadow);
+      position:sticky; top:14px; z-index:10;
     }
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.4px}
     .mark{
-      letter-spacing:0.18em;
-      text-transform:uppercase;
-      font-size:12px;
-      opacity:.85;
-      margin-bottom:28px;
+      width:34px; height:34px; border-radius:10px;
+      background:linear-gradient(135deg, rgba(230,200,110,.95), rgba(120,166,255,.95));
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
     }
-    h1{
-  margin:0 0 44px;
-  font-weight:600;
-  line-height:1.35;
-  letter-spacing:0.05em;
-  text-transform:uppercase;
-  font-size:clamp(34px, 5vw, 56px);
-}    
-    a.btn{
-      display:inline-block;
-      padding:14px 22px;
-      border:1px solid rgba(242,239,230,.6);
-      border-radius:10px;
-      color:#f2efe6;
-      text-decoration:none;
-      font-size:16px;
-      letter-spacing:.02em;
-}
+    nav{display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end}
+    .pill{
+      padding:8px 12px; border-radius:999px; border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-size:14px;
+    }
+    .pill:hover{border-color:rgba(255,255,255,.22); color:var(--text)}
+    .pill.active{border-color:rgba(230,200,110,.6); color:var(--text); background:rgba(230,200,110,.10)}
+    main{padding-top:26px}
+    .hero{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr} header{position:static} }
+    .card{
+      border:1px solid var(--line); border-radius:var(--radius);
+      background:rgba(15,22,33,.55);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .pad{padding:22px}
+    .kicker{color:var(--accent); font-weight:700; letter-spacing:.12em; text-transform:uppercase; font-size:12px}
+    h1{margin:10px 0 10px; font-size:44px; line-height:1.05}
+    @media (max-width: 520px){ h1{font-size:36px} }
+    .lead{color:var(--muted); font-size:16px; margin:0 0 18px}
+    .ctaRow{display:flex; flex-wrap:wrap; gap:12px; margin-top:16px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px; border-radius:12px; border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      font-weight:700;
+    }
+    .btn.primary{
+      border-color: rgba(230,200,110,.55);
+      background: linear-gradient(180deg, rgba(230,200,110,.22), rgba(255,255,255,.02));
+    }
+    .btn:hover{border-color:rgba(255,255,255,.24)}
+    .mini{
+      display:grid; gap:12px;
+    }
+    .stat{
+      padding:16px; border:1px solid var(--line); border-radius:16px;
+      background:rgba(255,255,255,.03);
+    }
+    .stat b{display:block; margin-bottom:6px}
+    blockquote{
+      margin:0; padding:18px 18px 18px 18px;
+      border-left:4px solid rgba(230,200,110,.7);
+      background:rgba(230,200,110,.08);
+      border-radius:14px;
+      color:var(--text);
+    }
+    .quoteBy{color:var(--muted); font-size:13px; margin-top:10px}
+    .section{margin-top:18px}
+    .grid3{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px}
+    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
+    .linkCard{
+      padding:16px; border:1px solid var(--line); border-radius:16px;
+      background:rgba(255,255,255,.03);
+    }
+    .linkCard:hover{border-color:rgba(255,255,255,.22)}
+    .linkCard .t{font-weight:800}
+    .linkCard .d{color:var(--muted); font-size:14px; margin-top:6px}
+    footer{margin-top:26px; color:var(--muted); font-size:13px; text-align:center}
+    .hr{height:1px; background:var(--line); margin:18px 0}
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <div class="mark">Angry Abe</div>
-    <h1>The<br>Constitution<br>Was Not a<br>Suggestion</h1>
-    
-    <a class="btn" 
-       href="https://angryabe.printful.me/product/the-constitution" 
-       target="_blank" 
-       rel="noopener" 
-       onclick="gtag('event', 'view_shirt_click', {'event_category': 'engagement', 'event_label': 'The Constitution Shirt'});">
-       Have a Look
-    </a>
-
-    <p style="margin-top: 24px;">
-      <a href="character.html" style="color: #fff; text-decoration: underline; font-size: 14px; opacity: 0.7; font-family: sans-serif; letter-spacing: 1px;">
-        View Reputation is Not Character →
+  <div class="wrap">
+    <header>
+      <a class="brand" href="index.html" aria-label="Angry Abe Home">
+        <span class="mark" aria-hidden="true"></span>
+        <span>ANGRY ABE</span>
       </a>
-    </p>
+      <nav>
+        <a class="pill" href="index.html">Home</a>
+        <a class="pill active" href="constitution.html">Constitution</a>
+        <a class="pill" href="character.html">Character</a>
+        <a class="pill" href="action.html">Action</a>
+      </nav>
+    </header>
 
-    <div class="fine" style="margin-top: 48px; opacity: 0.5; font-size: 12px;">
-      © Angry Abe
-    </div>
-  </main>
+    <main>
+      <section class="hero">
+        <div class="card">
+          <div class="pad">
+            <div class="kicker">Featured Shirt</div>
+            <h1>The Constitution<br/>Was Not a Suggestion.</h1>
+            <p class="lead">
+              A clean, centered statement for people who still believe the framework matters.
+              Not as a vibe. Not as a preference. As the rulebook.
+            </p>
+
+            <div class="ctaRow">
+              <!-- Update this URL if you want a different destination -->
+              <a class="btn primary" href="https://www.etsy.com/listing/4456802033/constitution-shirt-the-constitution-was" target="_blank" rel="noopener">
+                View on Etsy
+              </a>
+              <a class="btn" href="character.html">Next: Character</a>
+              <a class="btn" href="index.html">Back to Home</a>
+            </div>
+
+            <div class="hr"></div>
+
+            <blockquote>
+              “A house divided against itself cannot stand.”
+              <div class="quoteBy">— Abraham Lincoln</div>
+            </blockquote>
+          </div>
+        </div>
+
+        <aside class="card">
+          <div class="pad mini">
+            <div class="stat">
+              <b>Why it works</b>
+              <span class="d">Minimal type. Maximum meaning. Easy to wear, hard to ignore.</span>
+            </div>
+            <div class="stat">
+              <b>Where it belongs</b>
+              <span class="d">Rallies, cookouts, classrooms, town halls — or just Tuesday.</span>
+            </div>
+            <div class="stat">
+              <b>What it signals</b>
+              <span class="d">Order, liberty, limits — and a little backbone.</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section card">
+        <div class="pad">
+          <div class="kicker">Explore the Set</div>
+          <h2 style="margin:10px 0 12px; font-size:26px;">More messages, same spine.</h2>
+          <div class="grid3">
+            <a class="linkCard" href="character.html">
+              <div class="t">Reputation Is Not Character</div>
+              <div class="d">For the days when the crowd is loud and the conscience is quiet.</div>
+            </a>
+            <a class="linkCard" href="action.html">
+              <div class="t">Action Over Talk</div>
+              <div class="d">Because history doesn’t reward intentions — it rewards outcomes.</div>
+            </a>
+            <a class="linkCard" href="index.html">
+              <div class="t">Home</div>
+              <div class="d">All designs in one place, clean and simple.</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        © <span id="y"></span> Angry Abe • Built for people who still read the fine print.
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
