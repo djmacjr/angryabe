@@ -101,6 +101,11 @@ code {
   letter-spacing: 0.02em;
 }
 
+.brand-lockup {
+  display: grid;
+  gap: 0.12rem;
+}
+
 .brand-logo {
   width: 34px;
   height: 34px;
@@ -113,6 +118,14 @@ code {
 
 .brand-text {
   font-size: 0.98rem;
+}
+
+.brand-tagline {
+  font-size: 0.67rem;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .site-nav {
@@ -303,6 +316,116 @@ code {
   margin-top: 1rem;
 }
 
+.weekly-drop-banner {
+  margin-top: 1rem;
+  padding: 0.95rem 1.2rem;
+}
+
+.weekly-drop-banner p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.brand-statement,
+.ideas-section,
+.signup-section,
+.next-drop-section,
+.social-proof-section {
+  margin-top: 1rem;
+  padding: 1.2rem;
+}
+
+.brand-statement h2,
+.ideas-section h2,
+.signup-section h2,
+.next-drop-section h2,
+.social-proof-section h2 {
+  margin: 0.22rem 0 0.6rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.9rem, 3.7vw, 3rem);
+  line-height: 0.95;
+}
+
+.brand-statement p,
+.ideas-section p,
+.signup-section p,
+.next-drop-section p,
+.social-proof-section p {
+  margin: 0 0 0.65rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.brand-statement p:last-child,
+.ideas-section p:last-child,
+.signup-section p:last-child,
+.next-drop-section p:last-child,
+.social-proof-section p:last-child {
+  margin-bottom: 0;
+}
+
+.ideas-grid {
+  margin-top: 0.3rem;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.idea-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 0.9rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.idea-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.98rem;
+}
+
+.idea-card p {
+  margin: 0;
+}
+
+.signup-form {
+  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.65rem;
+  max-width: 720px;
+}
+
+.signup-form input {
+  min-height: 2.8rem;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  padding: 0 0.85rem;
+  font: inherit;
+}
+
+.signup-form input::placeholder {
+  color: var(--muted);
+}
+
+.signup-form input:focus-visible {
+  outline: 2px solid rgba(122, 168, 255, 0.4);
+  outline-offset: 1px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 .section-head {
   padding: 0.25rem 0 0.85rem;
 }
@@ -476,9 +599,8 @@ code {
 
 .product-links {
   margin-top: 0.15rem;
-  display: flex;
+  display: grid;
   gap: 0.5rem;
-  flex-wrap: wrap;
 }
 
 .status-text {
@@ -536,6 +658,15 @@ code {
   border-style: dashed;
 }
 
+.platform-card.official {
+  border-color: rgba(240, 208, 107, 0.38);
+  background: linear-gradient(
+    180deg,
+    rgba(240, 208, 107, 0.12),
+    rgba(255, 255, 255, 0.03)
+  );
+}
+
 .platform-label {
   font-weight: 800;
 }
@@ -555,6 +686,27 @@ code {
   justify-content: space-between;
   gap: 0.75rem;
   align-items: center;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 35;
+  min-height: 2.4rem;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(10, 13, 20, 0.82);
+  backdrop-filter: blur(8px);
+  color: var(--text);
+  font-weight: 800;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  border-color: var(--line-strong);
+  outline: none;
 }
 
 .site-footer p {
@@ -669,6 +821,10 @@ code {
     grid-template-columns: 1fr;
   }
 
+  .ideas-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .value-grid {
     grid-template-columns: 1fr;
   }
@@ -705,6 +861,21 @@ code {
   }
 
   .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .btn,
+  .hero-quicklinks .btn,
+  .product-links .btn,
+  .signup-form .btn {
+    width: 100%;
+  }
+
+  .signup-form {
+    grid-template-columns: 1fr;
+  }
+
+  .ideas-grid {
     grid-template-columns: 1fr;
   }
 

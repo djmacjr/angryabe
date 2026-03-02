@@ -2,6 +2,7 @@ const productGrid = document.querySelector("#productGrid");
 const productStatus = document.querySelector("#productStatus");
 const cardTemplate = document.querySelector("#productCardTemplate");
 const heroQuote = document.querySelector("#heroQuote");
+const emailSignupForm = document.querySelector("#emailSignupForm");
 
 const yearEl = document.querySelector("#year");
 const printfulCollectionLink = document.querySelector("#printfulCollectionLink");
@@ -38,6 +39,7 @@ const LINCOLN_QUOTES = [
 yearEl.textContent = String(new Date().getFullYear());
 applyStoreLinks();
 startHeroQuotes();
+initEmailSignup();
 loadProducts();
 
 async function loadProducts() {
@@ -110,9 +112,13 @@ function renderProducts(products) {
     wireProductLink(
       card.querySelector(".product-link-printful"),
       product.printfulUrl,
-      "Buy Now"
+      "Buy Now (Official Store)"
     );
-    wireProductLink(card.querySelector(".product-link-etsy"), product.etsyUrl, "Etsy");
+    wireProductLink(
+      card.querySelector(".product-link-etsy"),
+      product.etsyUrl,
+      "Shop on Etsy"
+    );
     wireProductLink(
       cardMainLink,
       product.printfulUrl,
@@ -191,6 +197,24 @@ function renderStatus(message) {
   productGrid.innerHTML = "";
   productStatus.textContent = message;
   productStatus.hidden = false;
+}
+
+function initEmailSignup() {
+  if (!emailSignupForm) return;
+
+  emailSignupForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(emailSignupForm);
+    const email = String(formData.get("email") || "").trim();
+    if (!email) return;
+
+    const subject = encodeURIComponent("Angry Abe Weekly Drop Signup");
+    const body = encodeURIComponent(
+      `Please add this email to weekly drop updates:\n\n${email}`
+    );
+    window.location.href = `mailto:angry_abe@macdne.com?subject=${subject}&body=${body}`;
+    emailSignupForm.reset();
+  });
 }
 
 function startHeroQuotes() {
