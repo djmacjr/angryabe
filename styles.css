@@ -220,10 +220,14 @@ code {
   font-size: 0.9rem;
 }
 
-.btn.is-disabled {
+.is-disabled {
   opacity: 0.5;
   pointer-events: none;
   cursor: default;
+}
+
+.social-kicker {
+  margin-top: 1rem;
 }
 
 .hero-meta {
@@ -540,6 +544,10 @@ code {
   border-color: var(--line-strong);
   background: rgba(255, 255, 255, 0.05);
   outline: none;
+}
+
+.platform-card.is-disabled {
+  border-style: dashed;
 }
 
 .platform-label {

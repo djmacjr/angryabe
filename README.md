@@ -37,6 +37,14 @@ Then set image paths in `/Users/dmacdonald/Documents/New project/data/products.j
 
 - `"image": "./assets/products/action-shirt.png"`
 
+## Social links
+
+Update social URLs in `/Users/dmacdonald/Documents/New project/script.js` inside `SOCIAL_LINKS`:
+
+- `facebook`
+- `instagram`
+- `x`
+
 ## Local preview
 
 Because the site loads JSON, use a local server (not double-clicking the HTML file):

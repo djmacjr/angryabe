@@ -10,10 +10,22 @@ const printfulTile = document.querySelector("#printfulTile");
 const etsyTile = document.querySelector("#etsyTile");
 const footerPrintfulLink = document.querySelector("#footerPrintfulLink");
 const footerEtsyLink = document.querySelector("#footerEtsyLink");
+const facebookLink = document.querySelector("#facebookLink");
+const instagramLink = document.querySelector("#instagramLink");
+const xLink = document.querySelector("#xLink");
+const footerFacebookLink = document.querySelector("#footerFacebookLink");
+const footerInstagramLink = document.querySelector("#footerInstagramLink");
+const footerXLink = document.querySelector("#footerXLink");
 
 const STORE_LINKS = {
   printful: "https://angryabe.printful.me/",
   etsy: "https://www.etsy.com/shop/AngryAbe",
+};
+
+const SOCIAL_LINKS = {
+  facebook: "https://facebook.com/angryabe",
+  instagram: "https://instagram.com/angryabe",
+  x: "",
 };
 
 yearEl.textContent = String(new Date().getFullYear());
@@ -87,7 +99,7 @@ function renderProducts(products) {
     wireProductLink(
       card.querySelector(".product-link-printful"),
       product.printfulUrl,
-      "Printful"
+      "Buy Now"
     );
     wireProductLink(card.querySelector(".product-link-etsy"), product.etsyUrl, "Etsy");
 
@@ -124,17 +136,30 @@ function applyStoreLinks() {
   wireStaticLink(etsyTile, STORE_LINKS.etsy);
   wireStaticLink(footerPrintfulLink, STORE_LINKS.printful);
   wireStaticLink(footerEtsyLink, STORE_LINKS.etsy);
+  wireStaticLink(facebookLink, SOCIAL_LINKS.facebook, "Facebook");
+  wireStaticLink(instagramLink, SOCIAL_LINKS.instagram, "Instagram");
+  wireStaticLink(xLink, SOCIAL_LINKS.x, "X");
+  wireStaticLink(footerFacebookLink, SOCIAL_LINKS.facebook, "Facebook");
+  wireStaticLink(footerInstagramLink, SOCIAL_LINKS.instagram, "Instagram");
+  wireStaticLink(footerXLink, SOCIAL_LINKS.x, "X");
 }
 
-function wireStaticLink(anchor, href) {
+function wireStaticLink(anchor, href, label = "Link") {
   if (!anchor) return;
-  if (!href) {
+  const url = typeof href === "string" ? href.trim() : "";
+  if (!url) {
     anchor.href = "#";
+    anchor.setAttribute("aria-disabled", "true");
+    anchor.title = `${label} link coming soon`;
+    anchor.classList.add("is-disabled");
     return;
   }
-  anchor.href = href;
+  anchor.href = url;
   anchor.target = "_blank";
   anchor.rel = "noreferrer";
+  anchor.removeAttribute("aria-disabled");
+  anchor.removeAttribute("title");
+  anchor.classList.remove("is-disabled");
 }
 
 function renderStatus(message) {
