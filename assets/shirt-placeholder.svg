@@ -1,0 +1,15 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="92" y1="114" x2="678" y2="874" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3ECDD"/>
+      <stop offset="1" stop-color="#D9CCB6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" rx="28" fill="url(#bg)"/>
+  <path d="M295 223L356 165C367 154 382 148 398 148H402C418 148 433 154 444 165L505 223L590 250C614 257 631 279 631 304V373L567 349V818C567 848 543 872 513 872H287C257 872 233 848 233 818V349L169 373V304C169 279 186 257 210 250L295 223Z" fill="#F8F4EA" stroke="#232323" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M324 238L368 190M476 238L432 190" stroke="#232323" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="400" cy="464" r="104" fill="#FF5D22" fill-opacity="0.18"/>
+  <path d="M354 457L383 486L450 419" stroke="#0D7C66" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="610" text-anchor="middle" fill="#111111" font-family="Arial, sans-serif" font-size="36" font-weight="700" letter-spacing="2">ADD PHOTO</text>
+  <text x="400" y="652" text-anchor="middle" fill="#5A554F" font-family="Arial, sans-serif" font-size="24" letter-spacing="1">Update image URL in products.json</text>
+</svg>

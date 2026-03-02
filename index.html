@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Angry Abe statement tees. Shop the current drop on Printful or Etsy."
+    />
+    <title>Angry Abe | Statement Tees</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Angry Abe home">
+          <img
+            class="brand-logo"
+            src="./assets/AngryAbe_Circle_white.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="brand-text">Angry Abe</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#shop">Shop</a>
+          <a href="#messages">Messages</a>
+          <a href="#about">About</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy panel">
+            <p class="eyebrow">Statement Apparel</p>
+            <h1>Wear the message. Keep it plain. Let it hit.</h1>
+            <p class="hero-text">
+              Angry Abe makes bold, minimalist shirts built around ideas that
+              still matter. This site is structured for weekly additions so your
+              brand can grow without rebuilding every page.
+            </p>
+
+            <div class="hero-actions">
+              <a
+                id="printfulCollectionLink"
+                class="btn btn-primary"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Shop Printful Collection
+              </a>
+              <a
+                id="etsyShopLink"
+                class="btn btn-secondary"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Shop Etsy
+              </a>
+            </div>
+
+            <div class="hero-meta">
+              <div class="stat">
+                <span class="stat-label">Current designs</span>
+                <strong id="heroProductCount">3</strong>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Platforms</span>
+                <strong>Printful + Etsy</strong>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Update flow</span>
+                <strong>JSON only</strong>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-visual panel" aria-label="Brand graphic">
+            <img
+              class="hero-logo"
+              src="./assets/AngryAbe_Tall_White.svg"
+              alt="Angry Abe logo"
+            />
+            <p class="hero-caption">
+              Minimal layouts. Sharp copy. Fast updates for new drops.
+            </p>
+          </aside>
+        </section>
+
+        <section class="ticker" aria-label="Brand themes">
+          <div class="ticker-track">
+            <span>Constitution</span>
+            <span>Character</span>
+            <span>Action</span>
+            <span>Accountability</span>
+            <span>Principle over optics</span>
+            <span>Constitution</span>
+            <span>Character</span>
+            <span>Action</span>
+          </div>
+        </section>
+
+        <section id="shop" class="products-section">
+          <div class="section-head">
+            <p class="eyebrow">Current Drop</p>
+            <h2>All shirts in one place</h2>
+            <p>
+              Each card can link to both marketplaces. Add new products in
+              <code>data/products.json</code>.
+            </p>
+          </div>
+
+          <div id="productGrid" class="product-grid" aria-live="polite"></div>
+          <p id="productStatus" class="status-text" hidden></p>
+        </section>
+
+        <section id="messages" class="message-section">
+          <div class="panel message-panel">
+            <p class="eyebrow">Why this format works</p>
+            <h2>One homepage beats a pile of disconnected pages.</h2>
+            <p>
+              Your older pages repeat styles and navigation. This rebuild keeps
+              the same attitude but moves everything into one clean storefront so
+              customers can scan the whole line fast.
+            </p>
+            <ul class="feature-list">
+              <li>Cleaner mobile navigation</li>
+              <li>Consistent product cards</li>
+              <li>Easy weekly additions with AI help</li>
+            </ul>
+          </div>
+
+          <div class="panel link-panel">
+            <p class="eyebrow">Shop Links</p>
+            <h2>Direct buyers to your preferred platform.</h2>
+            <div class="platform-grid">
+              <a
+                id="printfulTile"
+                class="platform-card"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="platform-label">Printful Store</span>
+                <span class="platform-desc"
+                  >Collection page for the full lineup.</span
+                >
+              </a>
+              <a
+                id="etsyTile"
+                class="platform-card"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="platform-label">Etsy Shop</span>
+                <span class="platform-desc"
+                  >Marketplace listing flow people already trust.</span
+                >
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="about-section panel">
+          <div>
+            <p class="eyebrow">About Angry Abe</p>
+            <h2>Build the brand first. Add inventory weekly.</h2>
+            <p>
+              This homepage is intentionally simple and expandable. Once you’re
+              ready, we can add real product photos, category filters, a story
+              page, and your custom web domain.
+            </p>
+          </div>
+          <div class="about-box">
+            <img
+              src="./assets/AngryAbe_Nape_white.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <p>
+              Replace the placeholder links/text with your final domain and
+              social channels anytime.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© <span id="year"></span> Angry Abe</p>
+        <div class="footer-links">
+          <a id="footerPrintfulLink" href="#" target="_blank" rel="noreferrer"
+            >Printful</a
+          >
+          <a id="footerEtsyLink" href="#" target="_blank" rel="noreferrer"
+            >Etsy</a
+          >
+          <a href="#top">Back to top</a>
+        </div>
+      </footer>
+    </div>
+
+    <template id="productCardTemplate">
+      <article class="product-card panel">
+        <div class="product-art" aria-hidden="true">
+          <div class="art-shell">
+            <img class="product-mockup" alt="" loading="lazy" />
+            <p class="art-headline"></p>
+          </div>
+        </div>
+
+        <div class="product-body">
+          <div class="product-topline">
+            <h3 class="product-name"></h3>
+            <p class="product-price"></p>
+          </div>
+          <p class="product-tag"></p>
+          <p class="product-description"></p>
+
+          <div class="product-meta">
+            <span class="badge badge-color"></span>
+            <span class="badge badge-fit"></span>
+          </div>
+
+          <div class="product-links">
+            <a class="btn btn-small btn-primary product-link-printful" href="#"
+              >Printful</a
+            >
+            <a class="btn btn-small btn-secondary product-link-etsy" href="#"
+              >Etsy</a
+            >
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
