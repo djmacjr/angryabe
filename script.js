@@ -121,12 +121,7 @@ function renderProducts(products) {
     wireProductLink(
       card.querySelector(".product-link-printful"),
       product.printfulUrl,
-      "Buy Now (Official Store)"
-    );
-    wireProductLink(
-      card.querySelector(".product-link-etsy"),
-      product.etsyUrl,
-      "Also available on Etsy"
+      "Shop the Collection"
     );
     wireProductLink(
       cardMainLink,
