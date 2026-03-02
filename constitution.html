@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AngryAbe — Constitution</title>
+  <meta name="description" content="A clear, readable page about constitutional principles." />
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --panel:#111827;
+      --panel2:#0f172a;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#f59e0b;
+      --accent2:#60a5fa;
+      --ring: rgba(245,158,11,.35);
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(96,165,250,.18), transparent 60%),
+        radial-gradient(900px 600px at 90% 20%, rgba(245,158,11,.18), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1050px;margin:0 auto;padding:28px 18px 60px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:14px 16px;
+      background: rgba(17,24,39,.65);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      position:sticky;top:12px;z-index:10;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .mark{
+      width:44px;height:44px;border-radius:14px;
+      display:grid;place-items:center;
+      background: linear-gradient(135deg, rgba(245,158,11,.22), rgba(96,165,250,.18));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      font-weight:800;letter-spacing:.5px;
+    }
+    .brand h1{font-size:16px;margin:0}
+    .brand p{margin:0;color:var(--muted);font-size:12px}
+    .nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 16px;min-height:52px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(15,23,42,.75);
+      color:var(--text);
+      font-weight:700;
+      transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease, background .12s ease;
+      box-shadow: 0 10px 26px rgba(0,0,0,.35);
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px);border-color:rgba(245,158,11,.35);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+    .btn:focus{outline:none;box-shadow:0 0 0 4px var(--ring), 0 14px 34px rgba(0,0,0,.45)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(245,158,11,.92), rgba(245,158,11,.55));
+      color:#111827;border-color:rgba(245,158,11,.60);
+    }
+    .btn.ghost{background: rgba(17,24,39,.35);border-color:rgba(255,255,255,.10)}
+    .page{
+      margin-top:22px;
+      padding:24px 18px;
+      background: rgba(17,24,39,.55);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+    .title-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
+    h2{margin:0;font-size:32px;line-height:1.15;letter-spacing:-.6px}
+    .subtitle{margin:6px 0 0;color:var(--muted);max-width:70ch}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      margin-top:18px;
+      align-items:start;
+    }
+    @media (max-width: 900px){.grid{grid-template-columns:1fr} header{position:relative;top:auto}}
+    .card{
+      background: rgba(15,23,42,.55);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: calc(var(--radius) + 6px);
+      padding:18px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+    }
+    .card h3{margin:0 0 10px;font-size:16px}
+    .card p{margin:0 0 10px;color:var(--muted);font-size:14px}
+    ul{margin:10px 0 0;padding-left:18px}
+    li{margin:8px 0;color:rgba(229,231,235,.92)}
+    .callout{
+      border-left:4px solid rgba(245,158,11,.8);
+      padding:12px 14px;
+      background: rgba(245,158,11,.10);
+      border-radius: 14px;
+      margin-top:14px;
+      color: rgba(229,231,235,.92);
+    }
+    footer{margin-top:18px;color:rgba(229,231,235,.72);font-size:12px;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="mark">AA</div>
+        <div>
+          <h1>AngryAbe</h1>
+          <p>Constitution</p>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a class="btn ghost" href="index.html">Home</a>
+        <a class="btn primary" href="constitution.html">Constitution</a>
+        <a class="btn" href="character.html">Character</a>
+        <a class="btn" href="action.html">Action</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <div class="title-row">
+        <div>
+          <h2>The Constitution is not a suggestion.</h2>
+          <p class="subtitle">
+            A framework with boundaries. Written on purpose. Meant to be followed — not “reinterpreted” into whatever is convenient today.
+          </p>
+        </div>
+        <a class="btn primary" href="action.html">Take Action</a>
+      </div>
+
+      <div class="grid">
+        <section class="card" aria-label="Key points">
+          <h3>Key points</h3>
+          <ul>
+            <li><strong>Limited government:</strong> power is delegated — not assumed.</li>
+            <li><strong>Separation of powers:</strong> no branch gets to do the job of another.</li>
+            <li><strong>Checks and balances:</strong> authority must answer to authority.</li>
+            <li><strong>Rights are protected:</strong> some freedoms are beyond majority vote.</li>
+            <li><strong>Rule of law:</strong> not rule by personality, bureaucracy, or “exceptions.”</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Plain truth:</strong> If the Constitution can be ignored when it’s inconvenient,
+            it doesn’t protect anyone when it matters.
+          </div>
+        </section>
+
+        <aside class="card" aria-label="Make it personal">
+          <h3>Make it personal</h3>
+          <p>Use this space to tailor the message to your audience. Keep it tight and direct.</p>
+          <ul>
+            <li>What constitutional principle is being tested right now?</li>
+            <li>What happens if it’s weakened?</li>
+            <li>What do you want a reader to do today?</li>
+          </ul>
+          <p style="margin-top:12px">
+            Want to add a quote? Drop it here — short, readable, and attributed.
+          </p>
+          <a class="btn" href="character.html" style="margin-top:10px">Next: Character</a>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      © <span id="year"></span> AngryAbe • Constitution
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
