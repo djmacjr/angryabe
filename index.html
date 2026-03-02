@@ -31,8 +31,8 @@
         </a>
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="#shop">Shop</a>
-          <a href="#messages">Messages</a>
-          <a href="#about">About</a>
+          <a href="#shop-links">Links</a>
+          <a href="#social">Social</a>
         </nav>
       </header>
 
@@ -40,7 +40,7 @@
         <section class="hero">
           <div class="hero-copy panel">
             <p class="eyebrow">Statement Apparel</p>
-            <h1>Wear the message. Keep it plain. Let it hit.</h1>
+            <h1>Wear the message</h1>
             <p class="hero-text">
               Angry Abe makes bold, minimalist shirts built around ideas that
               still matter. This site is structured for weekly additions so your
@@ -68,19 +68,11 @@
               </a>
             </div>
 
-            <div class="hero-meta">
-              <div class="stat">
-                <span class="stat-label">Current designs</span>
-                <strong id="heroProductCount">3</strong>
-              </div>
-              <div class="stat">
-                <span class="stat-label">Platforms</span>
-                <strong>Main Store + Etsy</strong>
-              </div>
-              <div class="stat">
-                <span class="stat-label">Update flow</span>
-                <strong>JSON only</strong>
-              </div>
+            <div class="hero-quicklinks">
+              <a id="aboutUsLink" class="btn btn-secondary" href="#"
+                >About Us</a
+              >
+              <a id="blogLink" class="btn btn-secondary" href="#">Blog</a>
             </div>
           </div>
 
@@ -90,9 +82,7 @@
               src="./assets/AngryAbe_Tall_White.svg"
               alt="Angry Abe logo"
             />
-            <p class="hero-caption">
-              Minimal layouts. Sharp copy. Fast updates for new drops.
-            </p>
+            <p id="heroQuote" class="hero-caption"></p>
           </aside>
         </section>
 
@@ -112,36 +102,17 @@
         <section id="shop" class="products-section">
           <div class="section-head">
             <p class="eyebrow">Current Drop</p>
-            <h2>All shirts in one place</h2>
-            <p>
-              Each card includes direct purchase and Etsy options. Add new products in
-              <code>data/products.json</code>.
-            </p>
+            <h2>The Shirts</h2>
           </div>
 
           <div id="productGrid" class="product-grid" aria-live="polite"></div>
           <p id="productStatus" class="status-text" hidden></p>
         </section>
 
-        <section id="messages" class="message-section">
-          <div class="panel message-panel">
-            <p class="eyebrow">Why this format works</p>
-            <h2>One homepage beats a pile of disconnected pages.</h2>
-            <p>
-              Your older pages repeat styles and navigation. This rebuild keeps
-              the same attitude but moves everything into one clean storefront so
-              customers can scan the whole line fast.
-            </p>
-            <ul class="feature-list">
-              <li>Cleaner mobile navigation</li>
-              <li>Consistent product cards</li>
-              <li>Easy weekly additions with AI help</li>
-            </ul>
-          </div>
-
+        <section id="shop-links" class="message-section">
           <div class="panel link-panel">
             <p class="eyebrow">Shop Links</p>
-            <h2>Direct buyers to your preferred platform.</h2>
+            <h2>Choose where you want to buy.</h2>
             <div class="platform-grid">
               <a
                 id="printfulTile"
@@ -152,7 +123,7 @@
               >
                 <span class="platform-label">Main Store</span>
                 <span class="platform-desc"
-                  >Collection page for the full lineup.</span
+                  >Official store with the full lineup.</span
                 >
               </a>
               <a
@@ -164,11 +135,11 @@
               >
                 <span class="platform-label">Etsy Shop</span>
                 <span class="platform-desc"
-                  >Marketplace listing flow people already trust.</span
+                  >Shop through Etsy marketplace listings.</span
                 >
               </a>
             </div>
-            <p class="eyebrow social-kicker">Social</p>
+            <p id="social" class="eyebrow social-kicker">Social</p>
             <div class="platform-grid">
               <a
                 id="facebookLink"
@@ -203,29 +174,6 @@
             </div>
           </div>
         </section>
-
-        <section id="about" class="about-section panel">
-          <div>
-            <p class="eyebrow">About Angry Abe</p>
-            <h2>Build the brand first. Add inventory weekly.</h2>
-            <p>
-              This homepage is intentionally simple and expandable. Once you’re
-              ready, we can add real product photos, category filters, a story
-              page, and your custom web domain.
-            </p>
-          </div>
-          <div class="about-box">
-            <img
-              src="./assets/AngryAbe_Nape_white.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <p>
-              Replace the placeholder links/text with your final domain and
-              social channels anytime.
-            </p>
-          </div>
-        </section>
       </main>
 
       <footer class="site-footer">
@@ -251,16 +199,16 @@
 
     <template id="productCardTemplate">
       <article class="product-card panel">
-        <div class="product-art" aria-hidden="true">
+        <a class="product-main-link product-art" href="#" target="_blank" rel="noreferrer" aria-label="">
           <div class="art-shell">
             <img class="product-mockup" alt="" loading="lazy" />
             <p class="art-headline"></p>
           </div>
-        </div>
+        </a>
 
         <div class="product-body">
           <div class="product-topline">
-            <h3 class="product-name"></h3>
+            <h3><a class="product-name-link" href="#" target="_blank" rel="noreferrer"></a></h3>
             <p class="product-price"></p>
           </div>
           <p class="product-tag"></p>
