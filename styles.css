@@ -579,6 +579,83 @@ code {
   outline: none;
 }
 
+.content-page main {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.page-hero,
+.page-section {
+  padding: 1.2rem;
+}
+
+.page-hero h1 {
+  margin: 0.2rem 0 0.5rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 0.95;
+}
+
+.page-subtitle {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+  max-width: 62ch;
+}
+
+.page-section h2 {
+  margin: 0 0 0.7rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 0.95;
+}
+
+.page-section p {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.page-section p:last-child {
+  margin-bottom: 0;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.value-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.9rem;
+}
+
+.value-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.value-card p {
+  margin: 0;
+}
+
+.page-list {
+  margin: 0 0 0.8rem;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.page-actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
@@ -589,6 +666,10 @@ code {
   }
 
   .message-section {
+    grid-template-columns: 1fr;
+  }
+
+  .value-grid {
     grid-template-columns: 1fr;
   }
 }

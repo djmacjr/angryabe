@@ -6,8 +6,6 @@ const heroQuote = document.querySelector("#heroQuote");
 const yearEl = document.querySelector("#year");
 const printfulCollectionLink = document.querySelector("#printfulCollectionLink");
 const etsyShopLink = document.querySelector("#etsyShopLink");
-const aboutUsLink = document.querySelector("#aboutUsLink");
-const blogLink = document.querySelector("#blogLink");
 const printfulTile = document.querySelector("#printfulTile");
 const etsyTile = document.querySelector("#etsyTile");
 const footerPrintfulLink = document.querySelector("#footerPrintfulLink");
@@ -28,11 +26,6 @@ const SOCIAL_LINKS = {
   facebook: "https://www.facebook.com/share/1Zwvomwfd1/?mibextid=wwXIfr",
   instagram: "https://www.instagram.com/angryabeproductions/",
   x: "https://x.com/abe_angry_pro",
-};
-
-const BRAND_LINKS = {
-  about: "",
-  blog: "",
 };
 
 const LINCOLN_QUOTES = [
@@ -164,8 +157,6 @@ function wireProductLink(anchor, href, label) {
 function applyStoreLinks() {
   wireStaticLink(printfulCollectionLink, STORE_LINKS.printful);
   wireStaticLink(etsyShopLink, STORE_LINKS.etsy);
-  wireStaticLink(aboutUsLink, BRAND_LINKS.about, "About Us");
-  wireStaticLink(blogLink, BRAND_LINKS.blog, "Blog");
   wireStaticLink(printfulTile, STORE_LINKS.printful);
   wireStaticLink(etsyTile, STORE_LINKS.etsy);
   wireStaticLink(footerPrintfulLink, STORE_LINKS.printful);

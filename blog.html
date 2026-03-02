@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ideas Worth Thinking About: commentary and updates from Angry Abe."
+    />
+    <title>Blog | Angry Abe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="page-shell content-page">
+      <header class="site-header">
+        <a class="brand" href="./index.html" aria-label="Angry Abe home">
+          <img
+            class="brand-logo"
+            src="./assets/AngryAbe_Circle_white.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="brand-text">Angry Abe</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#shop">Store</a>
+          <a href="./about.html">About</a>
+          <a href="./blog.html" aria-current="page">Blog</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="panel page-hero">
+          <p class="eyebrow">Blog</p>
+          <h1>Ideas Worth Thinking About</h1>
+          <p class="page-subtitle">
+            Thoughts on principles, character, liberty, and the ideas behind
+            Angry Abe designs.
+          </p>
+        </section>
+
+        <section class="panel page-section">
+          <h2>Categories</h2>
+          <div class="value-grid">
+            <article class="value-card">
+              <h3>Design Releases</h3>
+              <p>Stories behind new shirts and the meaning of each message.</p>
+            </article>
+            <article class="value-card">
+              <h3>Principles & Commentary</h3>
+              <p>
+                Thoughts on timeless values like character, responsibility,
+                liberty, and the Constitution.
+              </p>
+            </article>
+            <article class="value-card">
+              <h3>American Ideas</h3>
+              <p>
+                Discussions of the historical ideas that shaped American
+                freedom.
+              </p>
+            </article>
+            <article class="value-card">
+              <h3>Announcements</h3>
+              <p>Store updates, new products, and brand news.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel page-section">
+          <h2>Upcoming Topics</h2>
+          <ul class="page-list">
+            <li>Why Character Matters More Than Reputation</li>
+            <li>The Constitution Was Written With Purpose</li>
+            <li>Why Simple Messages Are Often the Most Powerful</li>
+            <li>The Difference Between Words and Actions</li>
+            <li>Why Principles Should Never Be Trendy</li>
+          </ul>
+          <p>
+            Voice: direct, principled, thoughtful, clear, and no-nonsense.
+          </p>
+        </section>
+
+        <section class="panel page-section">
+          <h2>Latest</h2>
+          <p>
+            First articles are in progress. Check back soon for full posts and
+            release notes.
+          </p>
+        </section>
+
+        <section class="panel page-section page-actions">
+          <a class="btn btn-primary" href="./index.html#shop">Shop The Shirts</a>
+          <a class="btn btn-secondary" href="./about.html">About Angry Abe</a>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© <span id="year"></span> Angry Abe</p>
+        <div class="footer-links">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#shop">Store</a>
+          <a href="./about.html">About</a>
+          <a href="./blog.html">Blog</a>
+          <a href="mailto:contact@angryabe.com">contact@angryabe.com</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
