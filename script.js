@@ -3,6 +3,7 @@ const productStatus = document.querySelector("#productStatus");
 const cardTemplate = document.querySelector("#productCardTemplate");
 const heroQuote = document.querySelector("#heroQuote");
 const emailSignupForm = document.querySelector("#emailSignupForm");
+const dropCountLabel = document.querySelector("#dropCountLabel");
 
 const yearEl = document.querySelector("#year");
 const printfulCollectionLink = document.querySelector("#printfulCollectionLink");
@@ -51,8 +52,15 @@ async function loadProducts() {
 
     const products = await response.json();
     if (!Array.isArray(products) || products.length === 0) {
+      if (dropCountLabel) dropCountLabel.textContent = "0 designs available";
       renderStatus("No products found yet. Add items to data/products.json.");
       return;
+    }
+
+    if (dropCountLabel) {
+      dropCountLabel.textContent = `${products.length} ${
+        products.length === 1 ? "design" : "designs"
+      } available`;
     }
 
     renderProducts(products);
@@ -85,8 +93,9 @@ function renderProducts(products) {
     priceEl.hidden = !priceText;
     card.querySelector(".product-tag").textContent =
       product.tagline || "Statement Tee";
-    card.querySelector(".product-description").textContent =
-      product.description || "";
+    card.querySelector(".product-description").innerHTML = formatDescription(
+      product.description || ""
+    );
     card.querySelector(".badge-color").textContent = `Color: ${
       product.color || "N/A"
     }`;
@@ -117,7 +126,7 @@ function renderProducts(products) {
     wireProductLink(
       card.querySelector(".product-link-etsy"),
       product.etsyUrl,
-      "Shop on Etsy"
+      "Also available on Etsy"
     );
     wireProductLink(
       cardMainLink,
@@ -215,6 +224,27 @@ function initEmailSignup() {
     window.location.href = `mailto:angry_abe@macdne.com?subject=${subject}&body=${body}`;
     emailSignupForm.reset();
   });
+}
+
+function formatDescription(text) {
+  const clean = String(text || "").trim();
+  if (!clean) return "";
+
+  const match = clean.match(/^(.*?[.!?])(\s+.*)?$/);
+  if (!match) return escapeHtml(clean);
+
+  const lead = escapeHtml(match[1].trim());
+  const rest = escapeHtml((match[2] || "").trim());
+  return rest ? `<strong>${lead}</strong> ${rest}` : `<strong>${lead}</strong>`;
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 function startHeroQuotes() {

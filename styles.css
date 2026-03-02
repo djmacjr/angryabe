@@ -189,7 +189,6 @@ code {
 .hero-actions {
   margin-top: 1rem;
   display: flex;
-  flex-wrap: wrap;
   gap: 0.7rem;
 }
 
@@ -241,13 +240,6 @@ code {
 
 .social-kicker {
   margin-top: 1rem;
-}
-
-.hero-quicklinks {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
 }
 
 .hero-visual {
@@ -442,6 +434,12 @@ code {
   color: var(--muted);
 }
 
+.drop-count-label {
+  margin: 0.12rem 0 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -582,6 +580,10 @@ code {
   font-size: 0.93rem;
 }
 
+.product-description strong {
+  color: var(--text);
+}
+
 .product-meta {
   display: flex;
   gap: 0.45rem;
@@ -676,6 +678,25 @@ code {
   font-size: 0.92rem;
 }
 
+.trust-section {
+  margin-top: 1rem;
+  padding: 1.2rem;
+}
+
+.trust-section h2 {
+  margin: 0.22rem 0 0.6rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.9rem, 3.7vw, 3rem);
+  line-height: 0.95;
+}
+
+.trust-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 .site-footer {
   margin-top: 1rem;
   padding: 0.95rem 1rem;
@@ -709,9 +730,25 @@ code {
   outline: none;
 }
 
-.site-footer p {
+.footer-brand {
+  max-width: 44ch;
+}
+
+.footer-title {
+  margin: 0;
+  color: var(--text);
+  font-weight: 800;
+}
+
+.footer-message {
+  margin: 0.2rem 0;
+  color: var(--muted);
+}
+
+.footer-copyright {
   margin: 0;
   color: var(--muted);
+  font-size: 0.92rem;
 }
 
 .footer-links {
@@ -865,7 +902,6 @@ code {
   }
 
   .hero-actions .btn,
-  .hero-quicklinks .btn,
   .product-links .btn,
   .signup-form .btn {
     width: 100%;

@@ -44,8 +44,6 @@
           <a href="#shop">Shop</a>
           <a href="./about.html">About</a>
           <a href="./blog.html">Blog</a>
-          <a href="#shop-links">Links</a>
-          <a href="#social">Social</a>
         </nav>
       </header>
 
@@ -53,11 +51,10 @@
         <section class="hero">
           <div class="hero-copy panel">
             <p class="eyebrow">Statement Apparel</p>
-            <h1>Wear the message</h1>
+            <h1>Statement tees for people who mean what they say</h1>
             <p class="hero-text">
-              Angry Abe makes bold, minimalist shirts built around ideas that
-              still matter. This site is structured for weekly additions so your
-              brand can grow without rebuilding every page.
+              Minimalist designs built around timeless principles:
+              Constitution, Character, and Action. Wear the message.
             </p>
 
             <div class="hero-actions">
@@ -68,7 +65,7 @@
                 target="_blank"
                 rel="noreferrer"
               >
-                Buy Now (Official Store)
+                Shop the Collection
               </a>
               <a
                 id="etsyShopLink"
@@ -80,14 +77,10 @@
                 Shop on Etsy
               </a>
             </div>
-
-            <div class="hero-quicklinks">
-              <a class="btn btn-secondary" href="./about.html">About Us</a>
-              <a class="btn btn-secondary" href="./blog.html">Blog</a>
-            </div>
           </div>
 
           <aside class="hero-visual panel" aria-label="Brand graphic">
+            <p class="eyebrow">Built on Principle</p>
             <img
               class="hero-logo"
               src="./assets/AngryAbe_Tall_White.svg"
@@ -119,16 +112,25 @@
           </p>
         </section>
 
-        <section class="ticker" aria-label="Brand themes">
-          <div class="ticker-track">
-            <span>Constitution</span>
-            <span>Character</span>
-            <span>Action</span>
-            <span>Accountability</span>
-            <span>Principle over optics</span>
-            <span>Constitution</span>
-            <span>Character</span>
-            <span>Action</span>
+        <section id="ideas" class="panel ideas-section">
+          <p class="eyebrow">The Ideas Behind The Brand</p>
+          <div class="ideas-grid">
+            <article class="idea-card">
+              <h3>Constitution</h3>
+              <p>Law matters.</p>
+            </article>
+            <article class="idea-card">
+              <h3>Character</h3>
+              <p>Integrity matters.</p>
+            </article>
+            <article class="idea-card">
+              <h3>Action</h3>
+              <p>Truth is proven.</p>
+            </article>
+            <article class="idea-card">
+              <h3>Accountability</h3>
+              <p>Responsibility matters.</p>
+            </article>
           </div>
         </section>
 
@@ -136,33 +138,11 @@
           <div class="section-head">
             <p class="eyebrow">Current Drop</p>
             <h2>The Shirts</h2>
+            <p id="dropCountLabel" class="drop-count-label">3 designs available</p>
           </div>
 
           <div id="productGrid" class="product-grid" aria-live="polite"></div>
           <p id="productStatus" class="status-text" hidden></p>
-        </section>
-
-        <section id="ideas" class="panel ideas-section">
-          <p class="eyebrow">The Ideas Behind The Brand</p>
-          <h2>Four pillars. One message: principles still matter.</h2>
-          <div class="ideas-grid">
-            <article class="idea-card">
-              <h3>Constitution</h3>
-              <p>Liberty only survives when rules apply to everyone.</p>
-            </article>
-            <article class="idea-card">
-              <h3>Character</h3>
-              <p>Reputation can be managed. Character cannot.</p>
-            </article>
-            <article class="idea-card">
-              <h3>Action</h3>
-              <p>Actions reveal what words conceal.</p>
-            </article>
-            <article class="idea-card">
-              <h3>Accountability</h3>
-              <p>Freedom requires responsibility.</p>
-            </article>
-          </div>
         </section>
 
         <section id="signup" class="panel signup-section">
@@ -198,8 +178,8 @@
 
         <section id="shop-links" class="message-section">
           <div class="panel link-panel">
-            <p class="eyebrow">Shop Links</p>
-            <h2>Choose your shopping path.</h2>
+            <p class="eyebrow">Where to Buy</p>
+            <h2>Official store first. Etsy available too.</h2>
             <div class="platform-grid">
               <a
                 id="printfulTile"
@@ -262,6 +242,16 @@
           </div>
         </section>
 
+        <section class="panel trust-section">
+          <p class="eyebrow">Trust Signals</p>
+          <h2>Made for quality. Built to last.</h2>
+          <ul class="trust-list">
+            <li>Premium Comfort Colors tees</li>
+            <li>Printed and shipped in the USA</li>
+            <li>Fulfilled by Printful</li>
+          </ul>
+        </section>
+
         <section class="panel social-proof-section">
           <p class="eyebrow">What People Are Saying</p>
           <h2>Social proof coming soon.</h2>
@@ -273,7 +263,14 @@
       </main>
 
       <footer class="site-footer">
-        <p>© <span id="year"></span> Angry Abe</p>
+        <div class="footer-brand">
+          <p class="footer-title">Angry Abe</p>
+          <p class="footer-message">
+            Statement tees built around timeless principles. New design drops
+            weekly.
+          </p>
+          <p class="footer-copyright">© <span id="year"></span> Angry Abe</p>
+        </div>
         <div class="footer-links">
           <a id="footerPrintfulLink" href="#" target="_blank" rel="noreferrer"
             >Shop</a
@@ -324,7 +321,7 @@
               >Buy Now (Official Store)</a
             >
             <a class="btn btn-small btn-secondary product-link-etsy" href="#"
-              >Shop on Etsy</a
+              >Also available on Etsy</a
             >
           </div>
         </div>
