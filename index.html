@@ -61,6 +61,8 @@
               <a
                 id="printfulCollectionLink"
                 class="btn btn-primary"
+                data-track-store
+                data-store="printful"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -106,19 +108,19 @@
         <section id="ideas" class="panel ideas-section">
           <p class="eyebrow">The Ideas Behind The Brand</p>
           <div class="ideas-grid">
-            <article class="idea-card">
+            <article class="idea-card" data-track-principle data-principle="constitution">
               <h3>Constitution</h3>
               <p>Law matters.</p>
             </article>
-            <article class="idea-card">
+            <article class="idea-card" data-track-principle data-principle="character">
               <h3>Character</h3>
               <p>Integrity matters.</p>
             </article>
-            <article class="idea-card">
+            <article class="idea-card" data-track-principle data-principle="action">
               <h3>Action</h3>
               <p>Truth is proven.</p>
             </article>
-            <article class="idea-card">
+            <article class="idea-card" data-track-principle data-principle="accountability">
               <h3>Accountability</h3>
               <p>Responsibility matters.</p>
             </article>
@@ -175,6 +177,8 @@
               <a
                 id="printfulTile"
                 class="platform-card official"
+                data-track-store
+                data-store="printful"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -185,6 +189,8 @@
               <a
                 id="etsyTile"
                 class="platform-card"
+                data-track-store
+                data-store="etsy"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -200,6 +206,8 @@
               <a
                 id="facebookLink"
                 class="platform-card"
+                data-track-social
+                data-platform="facebook"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -210,6 +218,8 @@
               <a
                 id="instagramLink"
                 class="platform-card"
+                data-track-social
+                data-platform="instagram"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -220,6 +230,8 @@
               <a
                 id="xLink"
                 class="platform-card"
+                data-track-social
+                data-platform="x"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -262,18 +274,22 @@
         </div>
         <div class="footer-links">
           <a id="footerPrintfulLink" href="#" target="_blank" rel="noreferrer"
+            data-track-store data-store="printful"
             >Shop</a
           >
           <a id="footerEtsyLink" href="#" target="_blank" rel="noreferrer"
+            data-track-store data-store="etsy"
             >Etsy</a
           >
           <a id="footerFacebookLink" href="#" target="_blank" rel="noreferrer"
+            data-track-social data-platform="facebook"
             >Facebook</a
           >
           <a id="footerInstagramLink" href="#" target="_blank" rel="noreferrer"
+            data-track-social data-platform="instagram"
             >Instagram</a
           >
-          <a id="footerXLink" href="#" target="_blank" rel="noreferrer">X</a>
+          <a id="footerXLink" href="#" target="_blank" rel="noreferrer" data-track-social data-platform="x">X</a>
           <a href="./about.html">About</a>
           <a href="./blog.html">Blog</a>
           <a href="mailto:angry_abe@macdne.com">Contact</a>
@@ -314,6 +330,7 @@
       </article>
     </template>
 
+    <script src="./analytics.js" defer></script>
     <script type="module" src="./script.js"></script>
   </body>
 </html>

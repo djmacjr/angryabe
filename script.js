@@ -82,11 +82,15 @@ function renderProducts(products) {
     const card = cardTemplate.content.firstElementChild.cloneNode(true);
     const cardMainLink = card.querySelector(".product-main-link");
     const nameLink = card.querySelector(".product-name-link");
+    const printfulBtn = card.querySelector(".product-link-printful");
+    const etsyBtn = card.querySelector(".product-link-etsy");
     const mockup = card.querySelector(".product-mockup");
     const headline = card.querySelector(".art-headline");
+    const shirtName = product.name || "Untitled";
+    const shirtCollection = slugify(shirtName);
 
-    headline.textContent = product.artHeadline || product.name || "New Design";
-    nameLink.textContent = product.name || "Untitled";
+    headline.textContent = product.artHeadline || shirtName || "New Design";
+    nameLink.textContent = shirtName;
     const priceEl = card.querySelector(".product-price");
     const priceText = typeof product.price === "string" ? product.price.trim() : "";
     priceEl.textContent = priceText;
@@ -119,20 +123,77 @@ function renderProducts(products) {
     }
 
     wireProductLink(
-      card.querySelector(".product-link-printful"),
+      printfulBtn,
       product.printfulUrl,
       "Shop the Collection"
     );
     wireProductLink(
       cardMainLink,
       product.printfulUrl,
-      `${product.name || "Shirt"} printful listing`
+      `${shirtName || "Shirt"} printful listing`
     );
     wireProductLink(
       nameLink,
       product.printfulUrl,
-      `${product.name || "Shirt"} printful listing`
+      `${shirtName || "Shirt"} printful listing`
     );
+
+    if (printfulBtn) {
+      printfulBtn.setAttribute("data-track-store", "");
+      printfulBtn.setAttribute("data-store", "printful");
+      printfulBtn.addEventListener("click", () => {
+        trackEvent("shirt_click", {
+          shirt_name: shirtName,
+          shirt_collection: shirtCollection,
+          button_location: "homepage_buy_button",
+        });
+        trackEvent("buy_click", {
+          shirt_name: shirtName,
+          store: "printful",
+        });
+      });
+    }
+
+    if (etsyBtn) {
+      etsyBtn.setAttribute("data-track-store", "");
+      etsyBtn.setAttribute("data-store", "etsy");
+      etsyBtn.addEventListener("click", () => {
+        trackEvent("shirt_click", {
+          shirt_name: shirtName,
+          shirt_collection: shirtCollection,
+          button_location: "homepage_etsy_button",
+        });
+        trackEvent("buy_click", {
+          shirt_name: shirtName,
+          store: "etsy",
+        });
+      });
+    }
+
+    cardMainLink.setAttribute("data-track-store", "");
+    cardMainLink.setAttribute("data-store", "printful");
+    nameLink.setAttribute("data-track-store", "");
+    nameLink.setAttribute("data-store", "printful");
+
+    cardMainLink.addEventListener("click", () => {
+      trackEvent("shirt_click", {
+        shirt_name: shirtName,
+        shirt_collection: shirtCollection,
+        button_location: "homepage_feature",
+      });
+      trackEvent("shirt_image_click", {
+        shirt_name: shirtName,
+        page: "homepage",
+      });
+    });
+
+    nameLink.addEventListener("click", () => {
+      trackEvent("shirt_click", {
+        shirt_name: shirtName,
+        shirt_collection: shirtCollection,
+        button_location: "homepage_title",
+      });
+    });
 
     fragment.append(card);
   }
@@ -216,9 +277,25 @@ function initEmailSignup() {
     const body = encodeURIComponent(
       `Please add this email to weekly drop updates:\n\n${email}`
     );
+    trackEvent("newsletter_signup", {
+      source_page: "homepage",
+      signup_location: "homepage",
+    });
     window.location.href = `mailto:angry_abe@macdne.com?subject=${subject}&body=${body}`;
     emailSignupForm.reset();
   });
+}
+
+function slugify(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "");
+}
+
+function trackEvent(name, params) {
+  window.AAAnalytics?.track?.(name, params);
 }
 
 function formatDescription(text) {
