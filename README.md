@@ -45,6 +45,19 @@ Update social URLs in `/Users/dmacdonald/Documents/New project/script.js` inside
 - `instagram`
 - `x`
 
+## Blog workflow
+
+- Feed page: `/Users/dmacdonald/Documents/New project/blog.html`
+- Post template: `/Users/dmacdonald/Documents/New project/posts/post-template.html`
+- Starter post: `/Users/dmacdonald/Documents/New project/posts/why-character-matters-more-than-reputation.html`
+
+To publish a new post:
+
+1. Copy `posts/post-template.html` to a new file in `posts/`.
+2. Update title, metadata, headings, and body.
+3. Add a post card link in `blog.html` under `Latest Posts`.
+4. Push to GitHub and it is live.
+
 ## Local preview
 
 Because the site loads JSON, use a local server (not double-clicking the HTML file):

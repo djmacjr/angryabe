@@ -845,6 +845,47 @@ code {
   flex-wrap: wrap;
 }
 
+.post-feed {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.post-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+}
+
+.post-card h3 {
+  margin: 0.25rem 0 0.45rem;
+  font-size: 1.12rem;
+}
+
+.post-card p {
+  margin: 0 0 0.7rem;
+}
+
+.post-page h1 {
+  margin: 0.2rem 0 0.55rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 0.95;
+}
+
+.post-page h2 {
+  margin: 1.1rem 0 0.5rem;
+}
+
+.post-meta {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;

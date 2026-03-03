@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Replace this with your post summary for Angry Abe."
+    />
+    <title>Post Title | Angry Abe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="page-shell content-page">
+      <header class="site-header">
+        <a class="brand" href="../index.html" aria-label="Angry Abe home">
+          <img
+            class="brand-logo"
+            src="../assets/AngryAbe_Circle_white.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="brand-text">Angry Abe</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#shop">Store</a>
+          <a href="../about.html">About</a>
+          <a href="../blog.html">Blog</a>
+        </nav>
+      </header>
+
+      <main>
+        <article class="panel page-section post-page">
+          <p class="eyebrow">Category</p>
+          <h1>Post Title</h1>
+          <p class="post-meta">Published Month Day, Year</p>
+          <p>
+            Replace this intro paragraph with your opening argument. Keep it
+            direct and clear.
+          </p>
+          <h2>Section Heading</h2>
+          <p>
+            Add your main body content here. Use short paragraphs for
+            readability.
+          </p>
+          <h2>Takeaway</h2>
+          <p>
+            End with a practical takeaway and a reason to explore the shirts.
+          </p>
+        </article>
+
+        <section class="panel page-section page-actions">
+          <a class="btn btn-primary" href="../index.html#shop">Shop The Shirts</a>
+          <a class="btn btn-secondary" href="../blog.html">Back To Blog</a>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© <span id="year"></span> Angry Abe</p>
+        <div class="footer-links">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#shop">Store</a>
+          <a href="../about.html">About</a>
+          <a href="../blog.html">Blog</a>
+          <a href="mailto:angry_abe@macdne.com">angry_abe@macdne.com</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../analytics.js" defer></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
