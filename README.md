@@ -22,7 +22,6 @@ Dark, single-page storefront for the Angry Abe brand with a data-driven product 
    - `artHeadline`
    - `image` (optional now, recommended)
    - `printfulUrl`
-   - `etsyUrl`
    - optional `price`, `tagline`, `color`, `fit`
 
 ## Shirt mockups (styled cards)

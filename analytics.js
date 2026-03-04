@@ -28,7 +28,7 @@
   function addUtmParams(url, medium) {
     try {
       const parsed = new URL(url, window.location.origin);
-      if (!parsed.hostname.includes("angryabe.printful.me") && !parsed.hostname.includes("etsy.com")) {
+      if (!parsed.hostname.includes("angryabe.printful.me")) {
         return parsed.toString();
       }
       if (!parsed.searchParams.has("utm_source")) parsed.searchParams.set("utm_source", "site");

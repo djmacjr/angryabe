@@ -7,11 +7,8 @@ const dropCountLabel = document.querySelector("#dropCountLabel");
 
 const yearEl = document.querySelector("#year");
 const printfulCollectionLink = document.querySelector("#printfulCollectionLink");
-const etsyShopLink = document.querySelector("#etsyShopLink");
 const printfulTile = document.querySelector("#printfulTile");
-const etsyTile = document.querySelector("#etsyTile");
 const footerPrintfulLink = document.querySelector("#footerPrintfulLink");
-const footerEtsyLink = document.querySelector("#footerEtsyLink");
 const facebookLink = document.querySelector("#facebookLink");
 const instagramLink = document.querySelector("#instagramLink");
 const xLink = document.querySelector("#xLink");
@@ -21,7 +18,6 @@ const footerXLink = document.querySelector("#footerXLink");
 
 const STORE_LINKS = {
   printful: "https://angryabe.printful.me/",
-  etsy: "https://www.etsy.com/shop/AngryAbe",
 };
 
 const SOCIAL_LINKS = {
@@ -83,7 +79,6 @@ function renderProducts(products) {
     const cardMainLink = card.querySelector(".product-main-link");
     const nameLink = card.querySelector(".product-name-link");
     const printfulBtn = card.querySelector(".product-link-printful");
-    const etsyBtn = card.querySelector(".product-link-etsy");
     const mockup = card.querySelector(".product-mockup");
     const headline = card.querySelector(".art-headline");
     const shirtName = product.name || "Untitled";
@@ -154,22 +149,6 @@ function renderProducts(products) {
       });
     }
 
-    if (etsyBtn) {
-      etsyBtn.setAttribute("data-track-store", "");
-      etsyBtn.setAttribute("data-store", "etsy");
-      etsyBtn.addEventListener("click", () => {
-        trackEvent("shirt_click", {
-          shirt_name: shirtName,
-          shirt_collection: shirtCollection,
-          button_location: "homepage_etsy_button",
-        });
-        trackEvent("buy_click", {
-          shirt_name: shirtName,
-          store: "etsy",
-        });
-      });
-    }
-
     cardMainLink.setAttribute("data-track-store", "");
     cardMainLink.setAttribute("data-store", "printful");
     nameLink.setAttribute("data-track-store", "");
@@ -227,11 +206,8 @@ function wireProductLink(anchor, href, label) {
 
 function applyStoreLinks() {
   wireStaticLink(printfulCollectionLink, STORE_LINKS.printful);
-  wireStaticLink(etsyShopLink, STORE_LINKS.etsy);
   wireStaticLink(printfulTile, STORE_LINKS.printful);
-  wireStaticLink(etsyTile, STORE_LINKS.etsy);
   wireStaticLink(footerPrintfulLink, STORE_LINKS.printful);
-  wireStaticLink(footerEtsyLink, STORE_LINKS.etsy);
   wireStaticLink(facebookLink, SOCIAL_LINKS.facebook, "Facebook");
   wireStaticLink(instagramLink, SOCIAL_LINKS.instagram, "Instagram");
   wireStaticLink(xLink, SOCIAL_LINKS.x, "X");
