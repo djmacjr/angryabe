@@ -886,6 +886,123 @@ code {
   font-weight: 700;
 }
 
+.action-hero h1 {
+  margin: 0.25rem 0 0.55rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 0.95;
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.action-pill-row {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.action-pill {
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.action-meaning-card,
+.featured-shirt-card,
+.action-notes-card,
+.tall-abe-card {
+  margin-top: 0.8rem;
+  padding: 1rem;
+}
+
+.action-meaning-card h2,
+.featured-shirt-card h2,
+.action-notes-card h2 {
+  margin: 0 0 0.5rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  line-height: 0.95;
+}
+
+.action-meaning-card p,
+.featured-shirt-card p,
+.action-notes-card p {
+  margin: 0 0 0.65rem;
+  color: var(--muted);
+}
+
+.action-meaning-card p:last-child,
+.featured-shirt-card p:last-child,
+.action-notes-card p:last-child {
+  margin-bottom: 0;
+}
+
+.tall-abe-card {
+  display: grid;
+  gap: 0.8rem;
+  justify-items: center;
+}
+
+.tall-abe-card img {
+  width: min(260px, 100%);
+  object-fit: contain;
+}
+
+.action-quote-wrap {
+  width: 100%;
+  border-top: 1px solid var(--line);
+  padding-top: 0.8rem;
+  min-height: 92px;
+}
+
+.action-quote-text {
+  margin: 0;
+  color: var(--text);
+  transition: opacity 320ms ease;
+}
+
+.action-quote-text.is-fading {
+  opacity: 0;
+}
+
+.action-quote-meta {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.featured-action-grid {
+  margin-top: 0.7rem;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 0.85rem;
+}
+
+.featured-shirt-media {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.featured-shirt-media img {
+  width: 120px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
@@ -904,6 +1021,11 @@ code {
   }
 
   .value-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-grid,
+  .featured-action-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -959,6 +1081,10 @@ code {
   .site-footer {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .featured-shirt-media {
+    grid-template-columns: 1fr;
   }
 }
 
