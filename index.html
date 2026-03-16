@@ -53,8 +53,9 @@
             <p class="eyebrow">Statement Apparel</p>
             <h1>Statement tees for people who mean what they say</h1>
             <p class="hero-text">
-              Minimalist designs built around timeless principles:
-              Constitution, Character, and Action. Wear the message.
+              Minimalist designs built around five enduring principles:
+              Character, Truth, Action, Resolve, and the Republic. Wear the
+              message.
             </p>
 
             <div class="hero-actions">
@@ -72,14 +73,39 @@
             </div>
           </div>
 
-          <aside class="hero-visual panel" aria-label="Brand graphic">
-            <p class="eyebrow">Built on Principle</p>
-            <img
-              class="hero-logo"
-              src="./assets/AngryAbe_Tall_White.svg"
-              alt="Angry Abe logo"
-            />
-            <p id="heroQuote" class="hero-caption"></p>
+          <aside class="hero-visual panel principles-hero" aria-label="Homepage principles rotator">
+            <p class="eyebrow">The Principles</p>
+            <div class="principles-hero-content" aria-live="polite">
+              <p id="heroPrincipleName" class="principle-name"></p>
+              <p id="heroPrincipleMeaning" class="principle-meaning"></p>
+              <a
+                id="heroPrincipleLink"
+                class="hero-principle-link"
+                href="./character.html"
+                data-track-principle
+                data-principle="character"
+                aria-label="Open current principle page"
+              >
+                <img
+                  class="hero-logo"
+                  src="./assets/AngryAbe_Tall_White.svg"
+                  alt="Angry Abe logo"
+                />
+              </a>
+              <blockquote class="principle-quote">
+                <p id="heroQuoteText" class="principle-quote-text"></p>
+                <footer id="heroQuoteAuthor" class="principle-quote-author"></footer>
+              </blockquote>
+              <a
+                id="heroPrincipleCta"
+                class="btn btn-secondary principle-cta"
+                href="./character.html"
+                data-track-principle
+                data-principle="character"
+              >
+                Enter Character
+              </a>
+            </div>
           </aside>
         </section>
 
@@ -96,35 +122,13 @@
             Angry Abe is built around the idea that principles still matter.
           </p>
           <p>
-            The Constitution. Character. Accountability. Action.
+            Character. Truth. Action. Resolve. The Republic.
           </p>
           <p>
             These shirts are designed to be simple, clear statements about ideas
             that shaped America and still matter today. One new shirt is
             released each week.
           </p>
-        </section>
-
-        <section id="ideas" class="panel ideas-section">
-          <p class="eyebrow">The Ideas Behind The Brand</p>
-          <div class="ideas-grid">
-            <article class="idea-card" data-track-principle data-principle="constitution">
-              <h3>Constitution</h3>
-              <p>Law matters.</p>
-            </article>
-            <article class="idea-card" data-track-principle data-principle="character">
-              <h3>Character</h3>
-              <p>Integrity matters.</p>
-            </article>
-            <article class="idea-card" data-track-principle data-principle="action">
-              <h3>Action</h3>
-              <p>Truth is proven.</p>
-            </article>
-            <article class="idea-card" data-track-principle data-principle="accountability">
-              <h3>Accountability</h3>
-              <p>Responsibility matters.</p>
-            </article>
-          </div>
         </section>
 
         <section id="shop" class="products-section">

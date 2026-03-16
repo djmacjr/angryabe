@@ -1,7 +1,12 @@
 const productGrid = document.querySelector("#productGrid");
 const productStatus = document.querySelector("#productStatus");
 const cardTemplate = document.querySelector("#productCardTemplate");
-const heroQuote = document.querySelector("#heroQuote");
+const heroPrincipleName = document.querySelector("#heroPrincipleName");
+const heroPrincipleMeaning = document.querySelector("#heroPrincipleMeaning");
+const heroPrincipleLink = document.querySelector("#heroPrincipleLink");
+const heroQuoteText = document.querySelector("#heroQuoteText");
+const heroQuoteAuthor = document.querySelector("#heroQuoteAuthor");
+const heroPrincipleCta = document.querySelector("#heroPrincipleCta");
 const emailSignupForm = document.querySelector("#emailSignupForm");
 const dropCountLabel = document.querySelector("#dropCountLabel");
 
@@ -26,16 +31,52 @@ const SOCIAL_LINKS = {
   x: "https://x.com/abe_angry_pro",
 };
 
-const LINCOLN_QUOTES = [
-  '"Whatever you are, be a good one."',
-  '"I am a slow walker, but I never walk back."',
-  '"You cannot escape the responsibility of tomorrow by evading it today."',
-  '"Give me six hours to chop down a tree and I will spend the first four sharpening the axe."',
+const HOMEPAGE_PRINCIPLES = [
+  {
+    key: "character",
+    name: "Character",
+    meaning: "Integrity when no one is watching.",
+    quote: '"Character is like a tree, and reputation like a shadow."',
+    author: "Abraham Lincoln",
+    href: "./character.html",
+  },
+  {
+    key: "truth",
+    name: "Truth",
+    meaning: "Plain speech, honest thinking, and moral clarity.",
+    quote: '"No man has a good enough memory to be a successful liar."',
+    author: "Abraham Lincoln",
+    href: "./truth.html",
+  },
+  {
+    key: "action",
+    name: "Action",
+    meaning: "Principles proven through conduct.",
+    quote: '"Words promise. Actions prove."',
+    author: "Angry Abe",
+    href: "./action.html",
+  },
+  {
+    key: "resolve",
+    name: "Resolve",
+    meaning: "Steady courage in difficult times.",
+    quote: '"I am a slow walker, but I never walk back."',
+    author: "Abraham Lincoln",
+    href: "./resolve.html",
+  },
+  {
+    key: "republic",
+    name: "The Republic",
+    meaning: "A nation of laws sustained by citizens who defend it.",
+    quote: '"A republic, if you can keep it."',
+    author: "Benjamin Franklin",
+    href: "./constitution.html",
+  },
 ];
 
 yearEl.textContent = String(new Date().getFullYear());
 applyStoreLinks();
-startHeroQuotes();
+initHomepagePrinciples();
 initEmailSignup();
 loadProducts();
 
@@ -295,12 +336,58 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
-function startHeroQuotes() {
-  if (!heroQuote) return;
+function initHomepagePrinciples() {
+  if (
+    !heroPrincipleName ||
+    !heroPrincipleMeaning ||
+    !heroPrincipleLink ||
+    !heroQuoteText ||
+    !heroQuoteAuthor ||
+    !heroPrincipleCta
+  ) {
+    return;
+  }
+
   let index = 0;
-  heroQuote.textContent = LINCOLN_QUOTES[index];
-  setInterval(() => {
-    index = (index + 1) % LINCOLN_QUOTES.length;
-    heroQuote.textContent = LINCOLN_QUOTES[index];
-  }, 4500);
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fadeTargets = [
+    heroPrincipleName,
+    heroPrincipleMeaning,
+    heroPrincipleLink,
+    heroQuoteText,
+    heroQuoteAuthor,
+    heroPrincipleCta,
+  ];
+
+  function renderPrinciple(principle) {
+    heroPrincipleName.textContent = principle.name;
+    heroPrincipleMeaning.textContent = principle.meaning;
+    heroQuoteText.textContent = principle.quote;
+    heroQuoteAuthor.textContent = principle.author;
+    heroPrincipleLink.href = principle.href;
+    heroPrincipleLink.setAttribute("data-principle", principle.key);
+    heroPrincipleLink.setAttribute(
+      "aria-label",
+      `Open ${principle.name} principle page`
+    );
+    heroPrincipleCta.href = principle.href;
+    heroPrincipleCta.setAttribute("data-principle", principle.key);
+    heroPrincipleCta.textContent = `Enter ${principle.name}`;
+  }
+
+  function rotatePrinciple() {
+    fadeTargets.forEach((node) => node.classList.add("is-fading"));
+
+    window.setTimeout(() => {
+      index = (index + 1) % HOMEPAGE_PRINCIPLES.length;
+      renderPrinciple(HOMEPAGE_PRINCIPLES[index]);
+      fadeTargets.forEach((node) => node.classList.remove("is-fading"));
+    }, 220);
+  }
+
+  renderPrinciple(HOMEPAGE_PRINCIPLES[index]);
+
+  if (!reduceMotion) {
+    window.setInterval(rotatePrinciple, 6000);
+  }
 }

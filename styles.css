@@ -260,11 +260,91 @@ code {
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.38));
 }
 
-.hero-caption {
-  margin: 0;
-  color: var(--muted);
+.principles-hero {
+  align-content: start;
+}
+
+.principles-hero-content {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
   text-align: center;
+}
+
+.principle-name,
+.principle-meaning,
+.hero-principle-link,
+.principle-quote-text,
+.principle-quote-author,
+.principle-cta {
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.principle-name.is-fading,
+.principle-meaning.is-fading,
+.hero-principle-link.is-fading,
+.principle-quote-text.is-fading,
+.principle-quote-author.is-fading,
+.principle-cta.is-fading {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.principle-name {
+  margin: 0.15rem 0 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.1rem, 4vw, 3.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+}
+
+.principle-meaning {
+  margin: 0;
   max-width: 28ch;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.hero-principle-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: min(320px, 100%);
+  padding: 0.35rem 0.2rem;
+  border-radius: 18px;
+  border: 1px solid transparent;
+}
+
+.hero-principle-link:hover,
+.hero-principle-link:focus-visible {
+  border-color: rgba(240, 208, 107, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+  outline: none;
+}
+
+.principle-quote {
+  margin: 0;
+  width: 100%;
+  max-width: 32ch;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+}
+
+.principle-quote-text {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.principle-quote-author {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.principle-cta {
+  min-width: 180px;
 }
 
 .ticker {
@@ -320,7 +400,6 @@ code {
 }
 
 .brand-statement,
-.ideas-section,
 .signup-section,
 .next-drop-section,
 .social-proof-section {
@@ -329,7 +408,6 @@ code {
 }
 
 .brand-statement h2,
-.ideas-section h2,
 .signup-section h2,
 .next-drop-section h2,
 .social-proof-section h2 {
@@ -340,7 +418,6 @@ code {
 }
 
 .brand-statement p,
-.ideas-section p,
 .signup-section p,
 .next-drop-section p,
 .social-proof-section p {
@@ -350,34 +427,10 @@ code {
 }
 
 .brand-statement p:last-child,
-.ideas-section p:last-child,
 .signup-section p:last-child,
 .next-drop-section p:last-child,
 .social-proof-section p:last-child {
   margin-bottom: 0;
-}
-
-.ideas-grid {
-  margin-top: 0.3rem;
-  display: grid;
-  gap: 0.75rem;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.idea-card {
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 0.9rem;
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.idea-card h3 {
-  margin: 0 0 0.35rem;
-  font-size: 0.98rem;
-}
-
-.idea-card p {
-  margin: 0;
 }
 
 .signup-form {
@@ -1016,10 +1069,6 @@ code {
     grid-template-columns: 1fr;
   }
 
-  .ideas-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .value-grid {
     grid-template-columns: 1fr;
   }
@@ -1060,6 +1109,10 @@ code {
     padding: 1rem;
   }
 
+  .hero-principle-link {
+    width: min(260px, 100%);
+  }
+
   .product-grid {
     grid-template-columns: 1fr;
   }
@@ -1071,10 +1124,6 @@ code {
   }
 
   .signup-form {
-    grid-template-columns: 1fr;
-  }
-
-  .ideas-grid {
     grid-template-columns: 1fr;
   }
 
