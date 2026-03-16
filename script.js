@@ -7,6 +7,9 @@ const heroPrincipleLink = document.querySelector("#heroPrincipleLink");
 const heroQuoteText = document.querySelector("#heroQuoteText");
 const heroQuoteAuthor = document.querySelector("#heroQuoteAuthor");
 const heroPrincipleCta = document.querySelector("#heroPrincipleCta");
+const latestPrincipleLink = document.querySelector("#latestPrincipleLink");
+const latestPrincipleTitle = document.querySelector("#latestPrincipleTitle");
+const latestPrincipleMeta = document.querySelector("#latestPrincipleMeta");
 const emailSignupForm = document.querySelector("#emailSignupForm");
 const dropCountLabel = document.querySelector("#dropCountLabel");
 
@@ -74,9 +77,31 @@ const HOMEPAGE_PRINCIPLES = [
   },
 ];
 
+const BLOG_POSTS = [
+  {
+    title: "Actions Reveal What Words Conceal",
+    href: "./posts/actions-reveal-what-words-conceal.html",
+    category: "principles",
+    publishedAt: "2026-03-14",
+  },
+  {
+    title: "The Constitution Was Not a Suggestion",
+    href: "./posts/the-constitution-was-written-with-purpose.html",
+    category: "american_ideas",
+    publishedAt: "2026-03-03",
+  },
+  {
+    title: "Why Character Matters More Than Reputation",
+    href: "./posts/why-character-matters-more-than-reputation.html",
+    category: "principles",
+    publishedAt: "2026-03-04",
+  },
+];
+
 yearEl.textContent = String(new Date().getFullYear());
 applyStoreLinks();
 initHomepagePrinciples();
+initLatestPrinciple();
 initEmailSignup();
 loadProducts();
 
@@ -390,4 +415,38 @@ function initHomepagePrinciples() {
   if (!reduceMotion) {
     window.setInterval(rotatePrinciple, 6000);
   }
+}
+
+function initLatestPrinciple() {
+  if (!latestPrincipleLink || !latestPrincipleTitle || !latestPrincipleMeta) {
+    return;
+  }
+
+  const latestPost = [...BLOG_POSTS].sort((a, b) =>
+    b.publishedAt.localeCompare(a.publishedAt)
+  )[0];
+
+  if (!latestPost) {
+    latestPrincipleLink.href = "./blog.html";
+    latestPrincipleTitle.textContent = "Read the latest thinking";
+    latestPrincipleMeta.textContent = "Open the blog";
+    return;
+  }
+
+  latestPrincipleLink.href = latestPost.href;
+  latestPrincipleLink.setAttribute("data-post-title", latestPost.title);
+  latestPrincipleLink.setAttribute("data-post-category", latestPost.category);
+  latestPrincipleTitle.textContent = latestPost.title;
+  latestPrincipleMeta.textContent = `Published ${formatPublishedDate(
+    latestPost.publishedAt
+  )}`;
+}
+
+function formatPublishedDate(value) {
+  const date = new Date(`${value}T12:00:00`);
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  }).format(date);
 }
