@@ -79,6 +79,12 @@ const HOMEPAGE_PRINCIPLES = [
 
 const BLOG_POSTS = [
   {
+    title: "Right Makes Might",
+    href: "./posts/right-makes-might.html",
+    category: "american_ideas",
+    publishedAt: "2026-04-04",
+  },
+  {
     title: "The Ballot Is Stronger Than The Bullet",
     href: "./posts/the-ballot-is-stronger-than-the-bullet.html",
     category: "american_ideas",
