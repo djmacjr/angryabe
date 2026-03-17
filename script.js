@@ -79,6 +79,12 @@ const HOMEPAGE_PRINCIPLES = [
 
 const BLOG_POSTS = [
   {
+    title: "Truth Is The Best Defense",
+    href: "./posts/truth-is-the-best-defense.html",
+    category: "principles",
+    publishedAt: "2026-03-21",
+  },
+  {
     title: "Actions Reveal What Words Conceal",
     href: "./posts/actions-reveal-what-words-conceal.html",
     category: "principles",
