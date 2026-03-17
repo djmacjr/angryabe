@@ -423,17 +423,6 @@ code {
   margin-top: 1rem;
 }
 
-.weekly-drop-banner {
-  margin-top: 1rem;
-  padding: 0.95rem 1.2rem;
-}
-
-.weekly-drop-banner p {
-  margin: 0;
-  color: var(--muted);
-  font-weight: 700;
-}
-
 .brand-statement,
 .signup-section,
 .next-drop-section,
@@ -466,6 +455,21 @@ code {
 .next-drop-section p:last-child,
 .social-proof-section p:last-child {
   margin-bottom: 0;
+}
+
+.principle-nav-section {
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+}
+
+.principle-button-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.principle-button-grid .btn {
+  width: 100%;
 }
 
 .signup-form {
@@ -1100,6 +1104,10 @@ code {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .principle-button-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .message-section {
     grid-template-columns: 1fr;
   }
@@ -1149,6 +1157,10 @@ code {
   }
 
   .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .principle-button-grid {
     grid-template-columns: 1fr;
   }
 
