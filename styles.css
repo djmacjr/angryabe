@@ -581,6 +581,7 @@ code {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: row;
   gap: 1rem;
 }
 
