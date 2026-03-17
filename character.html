@@ -1,187 +1,167 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AngryAbe — Character</title>
-  <meta name="description" content="A clear, readable page about character, standards, and integrity." />
-  <style>
-    :root{
-      --bg:#0b0f17;
-      --text:#e5e7eb;
-      --muted:#9ca3af;
-      --accent:#60a5fa;
-      --accent2:#f59e0b;
-      --ring: rgba(96,165,250,.35);
-      --shadow: 0 18px 50px rgba(0,0,0,.45);
-      --radius: 18px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:
-        radial-gradient(1200px 600px at 20% 10%, rgba(96,165,250,.20), transparent 60%),
-        radial-gradient(900px 600px at 90% 20%, rgba(245,158,11,.12), transparent 60%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.55;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1050px;margin:0 auto;padding:28px 18px 60px}
-    header{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-      padding:14px 16px;
-      background: rgba(17,24,39,.65);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
-      position:sticky;top:12px;z-index:10;
-    }
-    .brand{display:flex;align-items:center;gap:12px}
-    .mark{
-      width:44px;height:44px;border-radius:14px;
-      display:grid;place-items:center;
-      background: linear-gradient(135deg, rgba(96,165,250,.24), rgba(245,158,11,.14));
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      font-weight:800;letter-spacing:.5px;
-    }
-    .brand h1{font-size:16px;margin:0}
-    .brand p{margin:0;color:var(--muted);font-size:12px}
-    .nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:14px 16px;min-height:52px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(15,23,42,.75);
-      color:var(--text);
-      font-weight:700;
-      transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease, background .12s ease;
-      box-shadow: 0 10px 26px rgba(0,0,0,.35);
-      white-space:nowrap;
-    }
-    .btn:hover{transform:translateY(-1px);border-color:rgba(96,165,250,.40);box-shadow:0 14px 34px rgba(0,0,0,.45)}
-    .btn:focus{outline:none;box-shadow:0 0 0 4px var(--ring), 0 14px 34px rgba(0,0,0,.45)}
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(96,165,250,.88), rgba(96,165,250,.45));
-      color:#071425;border-color:rgba(96,165,250,.60);
-    }
-    .btn.ghost{background: rgba(17,24,39,.35);border-color:rgba(255,255,255,.10)}
-    .page{
-      margin-top:22px;
-      padding:24px 18px;
-      background: rgba(17,24,39,.55);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius: calc(var(--radius) + 6px);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
-    }
-    .title-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
-    h2{margin:0;font-size:32px;line-height:1.15;letter-spacing:-.6px}
-    .subtitle{margin:6px 0 0;color:var(--muted);max-width:72ch}
-    .grid{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:16px;
-      margin-top:18px;
-      align-items:start;
-    }
-    @media (max-width: 900px){.grid{grid-template-columns:1fr} header{position:relative;top:auto}}
-    .card{
-      background: rgba(15,23,42,.55);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius: calc(var(--radius) + 6px);
-      padding:18px;
-      box-shadow: 0 14px 40px rgba(0,0,0,.35);
-    }
-    .card h3{margin:0 0 10px;font-size:16px}
-    .card p{margin:0 0 10px;color:var(--muted);font-size:14px}
-    ul{margin:10px 0 0;padding-left:18px}
-    li{margin:8px 0;color:rgba(229,231,235,.92)}
-    .callout{
-      border-left:4px solid rgba(96,165,250,.85);
-      padding:12px 14px;
-      background: rgba(96,165,250,.10);
-      border-radius: 14px;
-      margin-top:14px;
-      color: rgba(229,231,235,.92);
-    }
-    footer{margin-top:18px;color:rgba(229,231,235,.72);font-size:12px;text-align:center}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="mark">AA</div>
-        <div>
-          <h1>AngryAbe</h1>
-          <p>Character</p>
-        </div>
-      </div>
-      <nav class="nav" aria-label="Primary">
-        <a class="btn ghost" href="index.html">Home</a>
-        <a class="btn" href="constitution.html">Constitution</a>
-        <a class="btn primary" href="character.html">Character</a>
-        <a class="btn" href="action.html">Action</a>
-      </nav>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Character: integrity when no one is watching."
+    />
+    <title>Character | Angry Abe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="page-shell content-page">
+      <header class="site-header">
+        <a class="brand" href="./index.html" aria-label="Angry Abe home">
+          <img
+            class="brand-logo"
+            src="./assets/AngryAbe_Sticker.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="brand-lockup">
+            <span class="brand-text">Angry Abe</span>
+            <span class="brand-tagline">Principles worth wearing.</span>
+            <span class="brand-tagline">Ideas worth defending.</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#shop">Store</a>
+          <a href="./about.html">About</a>
+          <a href="./blog.html">Blog</a>
+        </nav>
+      </header>
 
-    <main class="page">
-      <div class="title-row">
-        <div>
-          <h2>Reputation is not character.</h2>
-          <p class="subtitle">
-            Branding is easy. Integrity is hard. Character is what remains when the applause fades and the pressure shows up.
+      <main>
+        <section class="panel page-hero">
+          <p class="eyebrow">Character</p>
+          <h1>Character</h1>
+          <p class="page-subtitle">
+            Integrity when no one is watching.
           </p>
-        </div>
-        <a class="btn primary" href="action.html">Take Action</a>
-      </div>
+        </section>
 
-      <div class="grid">
-        <section class="card" aria-label="Core standards">
-          <h3>Core standards</h3>
-          <ul>
-            <li><strong>Honesty:</strong> say what’s true, even when it costs.</li>
-            <li><strong>Courage:</strong> do what’s right, not what’s trending.</li>
-            <li><strong>Accountability:</strong> own the result — no excuses, no blame games.</li>
-            <li><strong>Consistency:</strong> values don’t change depending on the audience.</li>
-            <li><strong>Service:</strong> power is a responsibility, not a prize.</li>
-          </ul>
+        <section class="panel page-section">
+          <h2>Character Outlasts Image</h2>
+          <p>
+            Reputation is what people say about you. Character is what remains
+            when there is no audience to impress and no applause to manage.
+          </p>
+          <p>
+            That distinction matters because image can be built, polished, and
+            defended. Character cannot. It shows itself in habits, decisions,
+            restraint, and conduct over time.
+          </p>
+          <p>
+            Angry Abe treats character as a moral standard, not a branding
+            choice. If your words and your behavior separate under pressure,
+            character is what tells the truth.
+          </p>
+        </section>
 
-          <div class="callout">
-            <strong>Bottom line:</strong> Character is the gap between what you say and what you do.
-            Close the gap — every time.
+        <section class="panel page-section">
+          <h2>Lincoln-Style Moral Clarity</h2>
+          <p>
+            Lincoln lived under relentless criticism, rumor, and political
+            attack. What gave him lasting stature was not public approval in
+            the moment. It was steadiness of principle.
+          </p>
+          <p>
+            He understood that reputation moves with noise, but character is
+            measured by what a person actually practices. That is why character
+            matters more than presentation. It survives the collapse of image.
+          </p>
+          <p>
+            In Angry Abe terms, the question is plain: are you managing
+            perception, or are you living with integrity?
+          </p>
+        </section>
+
+        <section class="panel page-section">
+          <p class="eyebrow">Current Shirt</p>
+          <div class="principle-product-grid">
+            <article class="panel principle-product-card">
+              <div class="principle-product-media">
+                <img
+                  src="./assets/products/unisex-garment-dyed-heavyweight-t-shirt-ivory-front-69a04abecee45.jpg"
+                  alt="Reputation Is Not Character shirt mockup"
+                />
+                <div>
+                  <h2>Reputation Is Not Character</h2>
+                  <p>
+                    A restrained statement tee for people who care more about
+                    integrity than applause.
+                  </p>
+                </div>
+              </div>
+              <div class="page-actions">
+                <a
+                  class="btn btn-primary"
+                  href="https://angryabe.printful.me/product/reputation-is-not-character"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-track-store
+                  data-store="printful"
+                  >Shop the Collection</a
+                >
+              </div>
+            </article>
+
+            <article class="panel principle-support-card">
+              <h2>What This Shirt Means</h2>
+              <p>
+                This design is a reminder that image can be curated, but
+                integrity has to be practiced. The point is not provocation. It
+                is clarity.
+              </p>
+              <p>
+                The statement lands because it names a distinction many people
+                prefer to blur. Character is proven through conduct, not through
+                reputation management.
+              </p>
+              <div class="page-actions">
+                <a class="btn btn-secondary" href="./posts/why-character-matters-more-than-reputation.html">Read the Article</a>
+              </div>
+            </article>
           </div>
         </section>
 
-        <aside class="card" aria-label="Short message block">
-          <h3>A short message you can reuse</h3>
-          <p>
-            “I’m not interested in image. I’m interested in integrity. When the moment demands it,
-            show your character — not your PR.”
-          </p>
-          <p style="margin-top:12px">
-            Edit this paragraph into your voice. Keep it short enough that people actually read it.
-          </p>
+        <section class="panel page-section">
+          <h2>Related Principles</h2>
+          <div class="principle-button-grid">
+            <a class="btn btn-secondary" href="./truth.html" data-track-principle data-principle="truth">Truth</a>
+            <a class="btn btn-secondary" href="./action.html" data-track-principle data-principle="action">Action</a>
+            <a class="btn btn-secondary" href="./resolve.html" data-track-principle data-principle="resolve">Resolve</a>
+            <a class="btn btn-secondary" href="./constitution.html" data-track-principle data-principle="republic">The Republic</a>
+            <a class="btn btn-secondary" href="./index.html" data-track-principle data-principle="character">Back to Home</a>
+          </div>
+        </section>
+      </main>
 
-          <a class="btn" href="constitution.html" style="margin-top:10px">Back: Constitution</a>
-          <a class="btn" href="action.html" style="margin-top:10px">Next: Action</a>
-        </aside>
-      </div>
-    </main>
+      <footer class="site-footer">
+        <p>© <span id="year"></span> Angry Abe</p>
+        <div class="footer-links">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#shop">Store</a>
+          <a href="./about.html">About</a>
+          <a href="./blog.html">Blog</a>
+          <a href="mailto:angry_abe@macdne.com">angry_abe@macdne.com</a>
+        </div>
+      </footer>
+    </div>
 
-    <footer>
-      © <span id="year"></span> AngryAbe • Character
-    </footer>
-  </div>
-
-  <script src="./analytics.js" defer></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
+    <script src="./analytics.js" defer></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

@@ -1,189 +1,177 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AngryAbe — Constitution</title>
-  <meta name="description" content="A clear, readable page about constitutional principles." />
-  <style>
-    :root{
-      --bg:#0b0f17;
-      --panel:#111827;
-      --panel2:#0f172a;
-      --text:#e5e7eb;
-      --muted:#9ca3af;
-      --accent:#f59e0b;
-      --accent2:#60a5fa;
-      --ring: rgba(245,158,11,.35);
-      --shadow: 0 18px 50px rgba(0,0,0,.45);
-      --radius: 18px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:
-        radial-gradient(1200px 600px at 20% 10%, rgba(96,165,250,.18), transparent 60%),
-        radial-gradient(900px 600px at 90% 20%, rgba(245,158,11,.18), transparent 60%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.55;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1050px;margin:0 auto;padding:28px 18px 60px}
-    header{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-      padding:14px 16px;
-      background: rgba(17,24,39,.65);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
-      position:sticky;top:12px;z-index:10;
-    }
-    .brand{display:flex;align-items:center;gap:12px}
-    .mark{
-      width:44px;height:44px;border-radius:14px;
-      display:grid;place-items:center;
-      background: linear-gradient(135deg, rgba(245,158,11,.22), rgba(96,165,250,.18));
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      font-weight:800;letter-spacing:.5px;
-    }
-    .brand h1{font-size:16px;margin:0}
-    .brand p{margin:0;color:var(--muted);font-size:12px}
-    .nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:14px 16px;min-height:52px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(15,23,42,.75);
-      color:var(--text);
-      font-weight:700;
-      transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease, background .12s ease;
-      box-shadow: 0 10px 26px rgba(0,0,0,.35);
-      white-space:nowrap;
-    }
-    .btn:hover{transform:translateY(-1px);border-color:rgba(245,158,11,.35);box-shadow:0 14px 34px rgba(0,0,0,.45)}
-    .btn:focus{outline:none;box-shadow:0 0 0 4px var(--ring), 0 14px 34px rgba(0,0,0,.45)}
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(245,158,11,.92), rgba(245,158,11,.55));
-      color:#111827;border-color:rgba(245,158,11,.60);
-    }
-    .btn.ghost{background: rgba(17,24,39,.35);border-color:rgba(255,255,255,.10)}
-    .page{
-      margin-top:22px;
-      padding:24px 18px;
-      background: rgba(17,24,39,.55);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius: calc(var(--radius) + 6px);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
-    }
-    .title-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
-    h2{margin:0;font-size:32px;line-height:1.15;letter-spacing:-.6px}
-    .subtitle{margin:6px 0 0;color:var(--muted);max-width:70ch}
-    .grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:16px;
-      margin-top:18px;
-      align-items:start;
-    }
-    @media (max-width: 900px){.grid{grid-template-columns:1fr} header{position:relative;top:auto}}
-    .card{
-      background: rgba(15,23,42,.55);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius: calc(var(--radius) + 6px);
-      padding:18px;
-      box-shadow: 0 14px 40px rgba(0,0,0,.35);
-    }
-    .card h3{margin:0 0 10px;font-size:16px}
-    .card p{margin:0 0 10px;color:var(--muted);font-size:14px}
-    ul{margin:10px 0 0;padding-left:18px}
-    li{margin:8px 0;color:rgba(229,231,235,.92)}
-    .callout{
-      border-left:4px solid rgba(245,158,11,.8);
-      padding:12px 14px;
-      background: rgba(245,158,11,.10);
-      border-radius: 14px;
-      margin-top:14px;
-      color: rgba(229,231,235,.92);
-    }
-    footer{margin-top:18px;color:rgba(229,231,235,.72);font-size:12px;text-align:center}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="mark">AA</div>
-        <div>
-          <h1>AngryAbe</h1>
-          <p>Constitution</p>
-        </div>
-      </div>
-      <nav class="nav" aria-label="Primary">
-        <a class="btn ghost" href="index.html">Home</a>
-        <a class="btn primary" href="constitution.html">Constitution</a>
-        <a class="btn" href="character.html">Character</a>
-        <a class="btn" href="action.html">Action</a>
-      </nav>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Constitutional Republic: a nation of laws sustained by citizens who defend the Constitution."
+    />
+    <title>The Constitutional Republic | Angry Abe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="page-shell content-page">
+      <header class="site-header">
+        <a class="brand" href="./index.html" aria-label="Angry Abe home">
+          <img
+            class="brand-logo"
+            src="./assets/AngryAbe_Sticker.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="brand-lockup">
+            <span class="brand-text">Angry Abe</span>
+            <span class="brand-tagline">Principles worth wearing.</span>
+            <span class="brand-tagline">Ideas worth defending.</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#shop">Store</a>
+          <a href="./about.html">About</a>
+          <a href="./blog.html">Blog</a>
+        </nav>
+      </header>
 
-    <main class="page">
-      <div class="title-row">
-        <div>
-          <h2>The Constitution is not a suggestion.</h2>
-          <p class="subtitle">
-            A framework with boundaries. Written on purpose. Meant to be followed — not “reinterpreted” into whatever is convenient today.
+      <main>
+        <section class="panel page-hero">
+          <p class="eyebrow">The Republic</p>
+          <h1>The Constitutional Republic</h1>
+          <p class="page-subtitle">
+            A nation of laws sustained by citizens who defend the Constitution.
           </p>
-        </div>
-        <a class="btn primary" href="action.html">Take Action</a>
-      </div>
+        </section>
 
-      <div class="grid">
-        <section class="card" aria-label="Key points">
-          <h3>Key points</h3>
-          <ul>
-            <li><strong>Limited government:</strong> power is delegated — not assumed.</li>
-            <li><strong>Separation of powers:</strong> no branch gets to do the job of another.</li>
-            <li><strong>Checks and balances:</strong> authority must answer to authority.</li>
-            <li><strong>Rights are protected:</strong> some freedoms are beyond majority vote.</li>
-            <li><strong>Rule of law:</strong> not rule by personality, bureaucracy, or “exceptions.”</li>
-          </ul>
+        <section class="panel page-section">
+          <h2>Power Must Be Restrained</h2>
+          <p>
+            America was not founded as a pure democracy driven by impulse. It
+            was ordered as a constitutional republic, which means public power
+            is limited, divided, and bound by law.
+          </p>
+          <p>
+            That structure exists for a reason. Liberty does not survive on
+            goodwill alone. It survives when government is restrained before it
+            can become arbitrary.
+          </p>
+          <p>
+            Angry Abe treats the Constitution as the operating boundary of the
+            republic, not as a ceremonial document to be quoted and then
+            ignored. Law protects liberty precisely because it limits what power
+            may do.
+          </p>
+          <p>
+            The republic endures only if citizens are willing to preserve it.
+            Institutions matter, but so does public seriousness. If the people
+            stop defending constitutional limits, no text can defend itself.
+          </p>
+        </section>
 
-          <div class="callout">
-            <strong>Plain truth:</strong> If the Constitution can be ignored when it’s inconvenient,
-            it doesn’t protect anyone when it matters.
+        <section class="panel page-section">
+          <h2>The Lincoln And Founding Perspective</h2>
+          <p>
+            The Founders wrote the Constitution with deliberate checks,
+            separated powers, and written limits because they understood human
+            nature. Power expands when it is not restrained.
+          </p>
+          <p>
+            Lincoln faced the greatest constitutional crisis in American
+            history and still treated the Constitution as the anchor of the
+            republic. He understood that if the nation abandoned its governing
+            framework whenever pressure rose, it would preserve nothing worth
+            keeping.
+          </p>
+          <p>
+            That is the standard here: constitutional seriousness, not selective
+            convenience. A republic remains free only when law applies even when
+            it is inconvenient.
+          </p>
+        </section>
+
+        <section class="panel page-section">
+          <p class="eyebrow">Current Shirt</p>
+          <div class="principle-product-grid">
+            <article class="panel principle-product-card">
+              <div class="principle-product-media">
+                <img
+                  src="./assets/products/unisex-garment-dyed-heavyweight-t-shirt-pepper-front-69a04af986740.jpg"
+                  alt="The Constitution Was Not a Suggestion shirt mockup"
+                />
+                <div>
+                  <h2>The Constitution Was Not a Suggestion</h2>
+                  <p>
+                    A direct statement for people who believe constitutional
+                    limits are real, binding, and worth defending.
+                  </p>
+                </div>
+              </div>
+              <div class="page-actions">
+                <a
+                  class="btn btn-primary"
+                  href="https://angryabe.printful.me/product/the-constitution"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-track-store
+                  data-store="printful"
+                  >Shop the Collection</a
+                >
+              </div>
+            </article>
+
+            <article class="panel principle-support-card">
+              <h2>What This Shirt Means</h2>
+              <p>
+                This design is not just a slogan. It is a reminder that the
+                constitutional framework was written to restrain power before it
+                becomes abuse.
+              </p>
+              <p>
+                The statement is blunt because the principle is not ambiguous.
+                The republic depends on citizens who still recognize the
+                difference between law and preference.
+              </p>
+              <div class="page-actions">
+                <a class="btn btn-secondary" href="./posts/the-constitution-was-written-with-purpose.html">Read the Article</a>
+              </div>
+            </article>
           </div>
         </section>
 
-        <aside class="card" aria-label="Make it personal">
-          <h3>Make it personal</h3>
-          <p>Use this space to tailor the message to your audience. Keep it tight and direct.</p>
-          <ul>
-            <li>What constitutional principle is being tested right now?</li>
-            <li>What happens if it’s weakened?</li>
-            <li>What do you want a reader to do today?</li>
-          </ul>
-          <p style="margin-top:12px">
-            Want to add a quote? Drop it here — short, readable, and attributed.
-          </p>
-          <a class="btn" href="character.html" style="margin-top:10px">Next: Character</a>
-        </aside>
-      </div>
-    </main>
+        <section class="panel page-section">
+          <h2>Related Principles</h2>
+          <div class="principle-button-grid">
+            <a class="btn btn-secondary" href="./truth.html" data-track-principle data-principle="truth">Truth</a>
+            <a class="btn btn-secondary" href="./character.html" data-track-principle data-principle="character">Character</a>
+            <a class="btn btn-secondary" href="./action.html" data-track-principle data-principle="action">Action</a>
+            <a class="btn btn-secondary" href="./resolve.html" data-track-principle data-principle="resolve">Resolve</a>
+            <a class="btn btn-secondary" href="./index.html" data-track-principle data-principle="republic">Back to Home</a>
+          </div>
+        </section>
+      </main>
 
-    <footer>
-      © <span id="year"></span> AngryAbe • Constitution
-    </footer>
-  </div>
+      <footer class="site-footer">
+        <p>© <span id="year"></span> Angry Abe</p>
+        <div class="footer-links">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#shop">Store</a>
+          <a href="./about.html">About</a>
+          <a href="./blog.html">Blog</a>
+          <a href="mailto:angry_abe@macdne.com">angry_abe@macdne.com</a>
+        </div>
+      </footer>
+    </div>
 
-  <script src="./analytics.js" defer></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
+    <script src="./analytics.js" defer></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

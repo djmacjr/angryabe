@@ -472,6 +472,51 @@ code {
   width: 100%;
 }
 
+.principle-product-grid {
+  margin-top: 0.35rem;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 0.85rem;
+}
+
+.principle-product-card,
+.principle-support-card {
+  padding: 1rem;
+}
+
+.principle-product-card h2,
+.principle-support-card h2 {
+  margin: 0 0 0.5rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  line-height: 0.95;
+}
+
+.principle-product-card p,
+.principle-support-card p {
+  margin: 0 0 0.65rem;
+  color: var(--muted);
+}
+
+.principle-product-card p:last-child,
+.principle-support-card p:last-child {
+  margin-bottom: 0;
+}
+
+.principle-product-media {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.principle-product-media img {
+  width: 120px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
 .signup-form {
   margin-top: 0.5rem;
   display: grid;
@@ -1117,7 +1162,8 @@ code {
   }
 
   .action-grid,
-  .featured-action-grid {
+  .featured-action-grid,
+  .principle-product-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1168,6 +1214,14 @@ code {
   .product-links .btn,
   .signup-form .btn {
     width: 100%;
+  }
+
+  .principle-product-media {
+    grid-template-columns: 1fr;
+  }
+
+  .principle-product-media img {
+    width: min(160px, 100%);
   }
 
   .signup-form {
