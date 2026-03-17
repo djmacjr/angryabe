@@ -79,6 +79,12 @@ const HOMEPAGE_PRINCIPLES = [
 
 const BLOG_POSTS = [
   {
+    title: "The Ballot Is Stronger Than The Bullet",
+    href: "./posts/the-ballot-is-stronger-than-the-bullet.html",
+    category: "american_ideas",
+    publishedAt: "2026-03-28",
+  },
+  {
     title: "Truth Is The Best Defense",
     href: "./posts/truth-is-the-best-defense.html",
     category: "principles",
