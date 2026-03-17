@@ -3,36 +3,40 @@
     "name": "The Constitution Was Not a Suggestion",
     "price": "",
     "tagline": "Statement Tee",
-    "description": "A bold, minimalist tee for people who believe the Constitution was written with intention and meant to be upheld.",
-    "color": "Varies by listing",
-    "fit": "Unisex",
+    "description": "A statement on law, restraint, and the preservation of liberty.",
     "artHeadline": "The Constitution was not a suggestion",
     "image": "./assets/products/unisex-garment-dyed-heavyweight-t-shirt-pepper-front-69a04af986740.jpg",
     "imageAlt": "The Constitution Was Not a Suggestion shirt mockup",
     "printfulUrl": "https://angryabe.printful.me/product/the-constitution"
   },
   {
-    "name": "Reputation Is Not Character",
+    "name": "Truth Is The Best Defense",
     "price": "",
     "tagline": "Statement Tee",
-    "description": "A reminder tee for people who care more about substance than applause. Quiet truth in a noisy world.",
-    "color": "Varies by listing",
-    "fit": "Unisex",
-    "artHeadline": "Reputation is not character",
-    "image": "./assets/products/unisex-garment-dyed-heavyweight-t-shirt-ivory-front-69a04abecee45.jpg",
-    "imageAlt": "Reputation Is Not Character shirt mockup",
-    "printfulUrl": "https://angryabe.printful.me/product/reputation-is-not-character"
+    "description": "A statement on truth, direct, unembellished, and enduring.",
+    "artHeadline": "Truth is the best defense",
+    "image": "./assets/products/Truth ghost.jpg",
+    "imageAlt": "Truth Is The Best Defense shirt mockup",
+    "printfulUrl": "https://angryabe.printful.me/product/the-constitution"
   },
   {
-    "name": "Actions Reveal What Words Conceal",
+    "name": "The Ballot Is Stronger Than The Bullet",
     "price": "",
     "tagline": "Statement Tee",
-    "description": "A clean, minimalist statement tee for people who value accountability and integrity. Proven, not proclaimed.",
-    "color": "Varies by listing",
-    "fit": "Unisex",
-    "artHeadline": "Actions reveal what words conceal",
-    "image": "./assets/products/unisex-garment-dyed-heavyweight-t-shirt-true-navy-front-69a04a7417f29.jpg",
-    "imageAlt": "Actions Reveal What Words Conceal shirt mockup",
-    "printfulUrl": "https://angryabe.printful.me/product/actions-reveal-what-words-conceal-comfort-colors-1717"
+    "description": "A statement on legitimacy, steady, grounded, and freely given.",
+    "artHeadline": "The ballot is stronger than the bullet",
+    "image": "./assets/products/Ballot ghost.jpg",
+    "imageAlt": "The Ballot Is Stronger Than The Bullet shirt mockup",
+    "printfulUrl": "https://angryabe.printful.me/"
+  },
+  {
+    "name": "Right Makes Might",
+    "price": "",
+    "tagline": "Statement Tee",
+    "description": "A statement on principle, firm, grounded, and enduring.",
+    "artHeadline": "Right makes might",
+    "image": "./assets/products/Might ghost.jpg",
+    "imageAlt": "Right Makes Might shirt mockup",
+    "printfulUrl": "https://angryabe.printful.me/"
   }
 ]

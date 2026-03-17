@@ -170,21 +170,10 @@ function renderProducts(products) {
 
     headline.textContent = product.artHeadline || shirtName || "New Design";
     nameLink.textContent = shirtName;
-    const priceEl = card.querySelector(".product-price");
-    const priceText = typeof product.price === "string" ? product.price.trim() : "";
-    priceEl.textContent = priceText;
-    priceEl.hidden = !priceText;
-    card.querySelector(".product-tag").textContent =
-      product.tagline || "Statement Tee";
-    card.querySelector(".product-description").innerHTML = formatDescription(
-      product.description || ""
-    );
-    card.querySelector(".badge-color").textContent = `Color: ${
-      product.color || "N/A"
-    }`;
-    card.querySelector(".badge-fit").textContent = `Fit: ${
-      product.fit || "Unisex"
-    }`;
+    const descriptionEl = card.querySelector(".product-description");
+    if (descriptionEl) {
+      descriptionEl.textContent = String(product.description || "").trim();
+    }
 
     const imageUrl = typeof product.image === "string" ? product.image.trim() : "";
     if (imageUrl) {
@@ -204,7 +193,7 @@ function renderProducts(products) {
     wireProductLink(
       printfulBtn,
       product.printfulUrl,
-      "Shop the Collection"
+      "Buy Now"
     );
     wireProductLink(
       cardMainLink,
