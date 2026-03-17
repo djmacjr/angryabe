@@ -132,6 +132,7 @@ code {
 .site-nav {
   display: flex;
   gap: 0.6rem;
+  row-gap: 0.45rem;
   flex-wrap: wrap;
 }
 
@@ -1183,7 +1184,7 @@ code {
 
   .site-nav {
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .site-nav a {
