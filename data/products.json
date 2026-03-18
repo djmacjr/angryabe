@@ -30,16 +30,6 @@
     "printfulUrl": "https://angryabe.printful.me/product/actions-reveal-what-words-conceal-comfort-colors-1717"
   },
   {
-    "name": "Truth Is The Best Defense",
-    "price": "",
-    "tagline": "Statement Tee",
-    "description": "A statement on truth, direct, unembellished, and enduring.",
-    "artHeadline": "Truth is the best defense",
-    "image": "./assets/products/Truth ghost.jpg",
-    "imageAlt": "Truth Is The Best Defense shirt mockup",
-    "printfulUrl": "https://angryabe.printful.me/product/truth-is-the-best-defense-69b9b04b2dd1d"
-  },
-  {
     "name": "The Ballot Is Stronger Than The Bullet",
     "price": "",
     "tagline": "Statement Tee",
@@ -48,6 +38,16 @@
     "image": "./assets/products/Ballot ghost.jpg",
     "imageAlt": "The Ballot Is Stronger Than The Bullet shirt mockup",
     "printfulUrl": "https://angryabe.printful.me/product/the-ballot-is-stronger-than-the-bullet-69b9a50987b00"
+  },
+  {
+    "name": "Truth Is The Best Defense",
+    "price": "",
+    "tagline": "Statement Tee",
+    "description": "A statement on truth, direct, unembellished, and enduring.",
+    "artHeadline": "Truth is the best defense",
+    "image": "./assets/products/Truth ghost.jpg",
+    "imageAlt": "Truth Is The Best Defense shirt mockup",
+    "printfulUrl": "https://angryabe.printful.me/product/truth-is-the-best-defense-69b9b04b2dd1d"
   },
   {
     "name": "Right Makes Might",
