@@ -1,5 +1,15 @@
 [
   {
+    "name": "Twelve Score And Ten Years Ago",
+    "price": "",
+    "tagline": "Statement Tee",
+    "description": "A statement on inheritance, continuity, and 250 years of self-government.",
+    "artHeadline": "Twelve score and ten years ago",
+    "image": "./assets/products/Twelve Score.jpg",
+    "imageAlt": "Twelve Score And Ten Years Ago shirt mockup",
+    "printfulUrl": "https://angryabe.printful.me/"
+  },
+  {
     "name": "The Constitution Was Not a Suggestion",
     "price": "",
     "tagline": "Statement Tee",

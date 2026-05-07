@@ -36,6 +36,14 @@ const SOCIAL_LINKS = {
 
 const HOMEPAGE_PRINCIPLES = [
   {
+    key: "independence",
+    name: "Independence",
+    meaning: "Liberty inherited, preserved, and carried forward.",
+    quote: '"Twelve score and ten years ago."',
+    author: "Angry Abe",
+    href: "./posts/twelve-score-and-ten-years-ago.html",
+  },
+  {
     key: "character",
     name: "Character",
     meaning: "Integrity when no one is watching.",
@@ -78,6 +86,12 @@ const HOMEPAGE_PRINCIPLES = [
 ];
 
 const BLOG_POSTS = [
+  {
+    title: "Twelve Score And Ten Years Ago",
+    href: "./posts/twelve-score-and-ten-years-ago.html",
+    category: "american_ideas",
+    publishedAt: "2026-06-15",
+  },
   {
     title: "Right Makes Might",
     href: "./posts/right-makes-might.html",
