@@ -7,6 +7,7 @@ const heroPrincipleLink = document.querySelector("#heroPrincipleLink");
 const heroQuoteText = document.querySelector("#heroQuoteText");
 const heroQuoteAuthor = document.querySelector("#heroQuoteAuthor");
 const heroPrincipleCta = document.querySelector("#heroPrincipleCta");
+const principlesHero = document.querySelector(".principles-hero");
 const latestPrincipleLink = document.querySelector("#latestPrincipleLink");
 const latestPrincipleTitle = document.querySelector("#latestPrincipleTitle");
 const latestPrincipleMeta = document.querySelector("#latestPrincipleMeta");
@@ -40,7 +41,8 @@ const HOMEPAGE_PRINCIPLES = [
     name: "Independence",
     meaning: "Liberty inherited, preserved, and carried forward.",
     quote: '"Twelve score and ten years ago."',
-    author: "Angry Abe",
+    author: "",
+    ctaLabel: "Explore Independence",
     href: "./posts/twelve-score-and-ten-years-ago.html",
   },
   {
@@ -400,7 +402,8 @@ function initHomepagePrinciples() {
     !heroPrincipleLink ||
     !heroQuoteText ||
     !heroQuoteAuthor ||
-    !heroPrincipleCta
+    !heroPrincipleCta ||
+    !principlesHero
   ) {
     return;
   }
@@ -420,7 +423,8 @@ function initHomepagePrinciples() {
     heroPrincipleName.textContent = principle.name;
     heroPrincipleMeaning.textContent = principle.meaning;
     heroQuoteText.textContent = principle.quote;
-    heroQuoteAuthor.textContent = principle.author;
+    heroQuoteAuthor.textContent = principle.author || "";
+    heroQuoteAuthor.hidden = !principle.author;
     heroPrincipleLink.href = principle.href;
     heroPrincipleLink.setAttribute("data-principle", principle.key);
     heroPrincipleLink.setAttribute(
@@ -429,7 +433,9 @@ function initHomepagePrinciples() {
     );
     heroPrincipleCta.href = principle.href;
     heroPrincipleCta.setAttribute("data-principle", principle.key);
-    heroPrincipleCta.textContent = `Enter ${principle.name}`;
+    heroPrincipleCta.textContent =
+      principle.ctaLabel || `Enter ${principle.name}`;
+    principlesHero.setAttribute("data-principle", principle.key);
   }
 
   function rotatePrinciple() {
