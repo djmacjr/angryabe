@@ -172,7 +172,7 @@ function renderProducts(products) {
 
   const fragment = document.createDocumentFragment();
 
-  for (const product of products) {
+  for (const [index, product] of products.entries()) {
     const card = cardTemplate.content.firstElementChild.cloneNode(true);
     const cardMainLink = card.querySelector(".product-main-link");
     const nameLink = card.querySelector(".product-name-link");
@@ -181,6 +181,10 @@ function renderProducts(products) {
     const headline = card.querySelector(".art-headline");
     const shirtName = product.name || "Untitled";
     const shirtCollection = slugify(shirtName);
+
+    if (index === 0) {
+      card.classList.add("is-featured");
+    }
 
     headline.textContent = product.artHeadline || shirtName || "New Design";
     nameLink.textContent = shirtName;
