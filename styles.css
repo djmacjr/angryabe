@@ -673,6 +673,15 @@ code {
   align-content: start;
 }
 
+.product-kicker {
+  margin: 0;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  font-size: 0.72rem;
+}
+
 .product-card.is-featured .product-art {
   border-bottom: 0;
   border-right: 1px solid var(--line);

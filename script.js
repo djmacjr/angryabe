@@ -184,6 +184,13 @@ function renderProducts(products) {
 
     if (index === 0) {
       card.classList.add("is-featured");
+      const productBody = card.querySelector(".product-body");
+      if (productBody) {
+        const kicker = document.createElement("p");
+        kicker.className = "product-kicker";
+        kicker.textContent = "250th Anniversary Release";
+        productBody.prepend(kicker);
+      }
     }
 
     headline.textContent = product.artHeadline || shirtName || "New Design";
